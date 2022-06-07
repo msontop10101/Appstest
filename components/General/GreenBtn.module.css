@@ -1,0 +1,15 @@
+.text {
+    font-weight: 500;
+    font-family: DM sans;
+    padding: 0px 10px 0px 10px;
+    text-transform: capitalize;
+}
+.btnColor {
+    background-color: #00690B;
+    color: white;
+    border: 1px solid #00690B;
+}
+.btnColor:hover{
+    background-color: transparent;
+    color: #00690B;
+}
