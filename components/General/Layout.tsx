@@ -1,5 +1,5 @@
-import { Container } from "@mui/system";
 import React from "react";
+import styles from "./Layout.module.css";
 
 type Props = {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ type Props = {
 function Layout({ children }: Props) {
   return (
     <>
-      <Container>{children}</Container>
+      <div className={styles.layoutSection}>{children}</div>
     </>
   );
 }

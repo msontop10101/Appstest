@@ -1,30 +1,48 @@
 import styles from "./Section1.module.css";
-import { Typography } from "@mui/material";
 import GreenBtn from "../General/GreenBtn";
 import GrayBtn from "../General/GrayBtn";
+import { Typography } from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function Section1() {
   return (
     <>
       <div className={styles.sectionContainer}>
-        <div>
-          <h4>Great software requires greate testing</h4>
-          <h3>find profit zapping bugs before your customeers do</h3>
-          <Typography>
-            As you are scaling and building fast, it becomes super easy to
-            outlook critical issues that may affect your bottom line. Appstest
-            acts as a cover to ensure that you ship faster to the market while
-            gauarnating product quality that your developer and internal QA may
-            overlook
-          </Typography>
-        </div>
-        <div className={styles.sectionBtns}>
-          <GreenBtn>
-            <Typography>Request Access</Typography>
-          </GreenBtn>
-          <GrayBtn>
-            <Typography>Request Quote</Typography>
-          </GrayBtn>
+        <div className={styles.sectionCenter}>
+          <div>
+            <h4>Great software requires great testing</h4>
+            <h3>find profit zapping bugs before your customeers do!</h3>
+            <p className={styles.sectionContent}>
+              As you are scaling and building fast, it becomes super easy to
+              outlook critical issues that may affect your bottom line. Appstest
+              acts as a cover to ensure that you ship faster to the market while
+              gauarnating product quality that your developer and internal QA
+              may overlook
+            </p>
+          </div>
+          <div className={styles.sectionBtns}>
+            <div className={styles.btn}>
+              <GreenBtn>
+                <div className={styles.btnElements}>
+                  <Typography>Request Access</Typography>
+                  <div className={styles.iconBtn}>
+                    <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                  </div>
+                </div>
+              </GreenBtn>
+            </div>
+            <div className={styles.btn}>
+              <GrayBtn>
+                <div className={styles.btnElements}>
+                  <Typography>Request Quote</Typography>
+                  <div className={styles.iconBtn}>
+                    <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                  </div>
+                </div>
+              </GrayBtn>
+            </div>
+          </div>
         </div>
       </div>
     </>

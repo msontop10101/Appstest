@@ -4,7 +4,6 @@ import laptop3 from "../Assets/Images/Section4/laptop3.png";
 import no1 from "../Assets/Images/Section4/no1.png";
 import no2 from "../Assets/Images/Section4/no2.png";
 import no3 from "../Assets/Images/Section4/no3.png";
-import mobile from "../Assets/Images/Section4/mobiile.png";
 
 export const LPsection3 = [
     {

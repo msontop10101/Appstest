@@ -1,0 +1,12 @@
+.footerSection {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0px 40px 0px;
+    background-color: #F7F7F7;
+}
+.footerSection li {
+    list-style-type: none;
+    text-decoration: underline;
+    cursor: pointer;
+}

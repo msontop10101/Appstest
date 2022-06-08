@@ -1,0 +1,42 @@
+.sectionContainer {
+    display: flex;
+    margin: 50px 0px 50px 0px;
+    justify-content: space-between;
+}
+.content {
+    display: flex;
+    align-items: center;
+    color: #00690B;
+    text-decoration: underline;
+}
+.content p {
+    padding-right: 5px;
+}
+.sectionTextContent {
+    width: 40%;
+}
+.headerContent {
+    display: flex;
+    align-items: center;
+}
+.headerContent h4 {
+    font-weight: bolder;
+    padding: 20px;
+}
+.styler{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.parentImage {
+    position: relative;
+    padding-bottom: 30px;
+    padding-right: 20px;
+}
+.pImage {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.hide {
+    display: none;
+}

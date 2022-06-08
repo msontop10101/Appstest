@@ -4,14 +4,14 @@ import styles from "./Section3.module.css";
 function Section3() {
   return (
     <>
-      <div>
-        <h3>SHIP QUALITY PRODUCT FASTER</h3>
-      </div>
-      <div>
-        <h3>
-          Get onboarded in minutes, and get test results in hours not in days or
-          months
-        </h3>
+      <div className={styles.sectionContainer}>
+        <div className={styles.sectionContent}>
+          <h4>SHIP QUALITY PRODUCT FASTER</h4>
+          <h3>
+            Get onboarded in minutes, and get test results in hours not in days
+            or months
+          </h3>
+        </div>
       </div>
     </>
   );
