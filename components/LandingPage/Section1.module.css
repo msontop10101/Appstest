@@ -39,3 +39,28 @@
 .iconBtn {
     padding-left: 5px;
 }
+.btnElements p {
+    padding: 0px;
+    margin: 0%;
+}
+
+@media screen and (max-width: 800px) {
+    .sectionBtns {
+        display: block;
+    }
+    .sectionCenter {
+        width: 100%;
+    }
+    .sectionCenter h4 {
+        font-size: smaller;
+    }
+    .sectionCenter h3 {
+        font-size: large;
+    }
+    .sectionCenter p {
+        font-size: smaller;
+    }
+    .btn {
+        padding: 5px;
+    }
+}

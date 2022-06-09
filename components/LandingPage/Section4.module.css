@@ -40,3 +40,25 @@
 .hide {
     display: none;
 }
+
+@media screen and (max-width: 800px) {
+    .sectionContainer {
+        display: flex;
+        flex-direction: column;
+    }
+    .sectionTextContent {
+        width: 100%;
+    }
+    .smHide {
+        display:none;
+    }
+    .parentImage {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 0px;
+        padding-right: 0px;
+    }
+    .headerContent h4 {
+        padding: 1px;
+    }
+}

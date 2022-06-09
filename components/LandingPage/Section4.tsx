@@ -40,7 +40,7 @@ function Section4() {
                 </div>
                 <div className={styles.parentImage}>
                   <Image src={img} alt="image" />
-                  <div className={`${styles.pImage} ${styles.hide}`}>
+                  <div className={`${styles.pImage} ${styles.hide} ${styles.smHide}`}>
                     <Image src={mobile} alt="image" />
                   </div>
                 </div>

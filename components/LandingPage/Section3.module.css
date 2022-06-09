@@ -17,3 +17,12 @@
 .sectionContent {
     width: 40%;
 }
+
+@media screen and (max-width: 800px) {
+    .sectionContent {
+        width: 100%;
+    }
+    .sectionContent h3 {
+        font-size: large;
+    }
+}

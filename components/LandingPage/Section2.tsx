@@ -16,18 +16,26 @@ function Section2() {
       <div className={styles.sectionContainer}>
         <Box mt={5} className={styles.boxContainer}>
           <p>Trusted by:</p>
-          <Grid container my={2} columnSpacing={6}>
+          <Grid container>
             <Grid item xs={6} sm={6} md={3} lg={3}>
-              <Image src={allea} alt="allea" />
+              <div className={styles.items}>
+                <Image src={allea} alt="allea" />
+              </div>
             </Grid>
             <Grid item xs={6} sm={6} md={3} lg={3}>
-              <Image src={bleyt} alt="bleyt" />
+              <div className={styles.items}>
+                <Image src={bleyt} alt="bleyt" />
+              </div>
             </Grid>
             <Grid item xs={6} sm={6} md={3} lg={3}>
-              <Image src={inlaks} alt="inlaks" />
+              <div className={styles.items}>
+                <Image src={inlaks} alt="inlaks" />
+              </div>
             </Grid>
             <Grid item xs={6} sm={6} md={3} lg={3}>
-              <Image src={providusbank} alt="providusbank" />
+              <div className={styles.items}>
+                <Image src={providusbank} alt="providusbank" />
+              </div>
             </Grid>
           </Grid>
         </Box>
