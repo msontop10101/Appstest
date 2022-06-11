@@ -5,6 +5,9 @@
 .place {
     padding: 0px 50px 0px 50px;
 }
+.spread a {
+    text-decoration: none;
+}
 
 @media screen and (max-width: 800px) {
     .place {

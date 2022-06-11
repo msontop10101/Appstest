@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Section4.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -33,14 +34,20 @@ function Section4() {
                     <h4>{head}</h4>
                   </div>
                   <p>{text}</p>
-                  <div className={styles.content}>
-                    <p>Request Access</p>
-                    <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
-                  </div>
+                  <Link href="../../RequestAccess">
+                    <a>
+                      <div className={styles.content}>
+                        <p>Request Access</p>
+                        <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                      </div>
+                    </a>
+                  </Link>
                 </div>
                 <div className={styles.parentImage}>
                   <Image src={img} alt="image" />
-                  <div className={`${styles.pImage} ${styles.hide} ${styles.smHide}`}>
+                  <div
+                    className={`${styles.pImage} ${styles.hide} ${styles.smHide}`}
+                  >
                     <Image src={mobile} alt="image" />
                   </div>
                 </div>

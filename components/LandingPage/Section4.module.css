@@ -40,6 +40,9 @@
 .hide {
     display: none;
 }
+.sectionTextContent a {
+    text-decoration: none;
+}
 
 @media screen and (max-width: 800px) {
     .sectionContainer {

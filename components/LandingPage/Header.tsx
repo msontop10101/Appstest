@@ -8,6 +8,7 @@ import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
 
 //NEXT JS
 import Image from "next/image";
+import Link from "next/link";
 
 //IMAGES FROM FOLDER
 import logo from "../../Assets/Images/Header/logo.png";
@@ -27,7 +28,11 @@ function Header() {
           <IconButton style={{ backgroundColor: "transparent" }}>
             <Image src={logo} alt="logo" />
           </IconButton>
-          <GreenBtn>Login</GreenBtn>
+          <Link href="../../Login">
+            <a>
+              <GreenBtn>Login</GreenBtn>
+            </a>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

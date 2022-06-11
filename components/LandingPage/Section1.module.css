@@ -43,6 +43,9 @@
     padding: 0px;
     margin: 0%;
 }
+.sectionContainer a {
+    text-decoration: none;
+}
 
 @media screen and (max-width: 800px) {
     .sectionBtns {

@@ -15,23 +15,4 @@ a {
   box-sizing: border-box;
 }
 
-.sectionContainer {
-    display: flex;
-    margin: 50px 0px 50px 0px;
-}
-.headerContent {
-    display: flex;
-    align-items: center;
-}
-.headerContent h4 {
-    font-weight: bolder;
-    padding: 20px;
-}
-.sectionTextContent span {
-    color: #00690B;
-    text-decoration: underline;
-}
-.styler:nth-child(odd) {
-    background-color: red;
-    color: blue;
-}
+

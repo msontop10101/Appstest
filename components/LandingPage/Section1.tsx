@@ -4,6 +4,7 @@ import GrayBtn from "../General/GrayBtn";
 import { Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 function Section1() {
   return (
@@ -23,24 +24,32 @@ function Section1() {
           </div>
           <div className={styles.sectionBtns}>
             <div className={styles.btn}>
-              <GreenBtn>
-                <div className={styles.btnElements}>
-                  <Typography>Request Access</Typography>
-                  <div className={styles.iconBtn}>
-                    <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
-                  </div>
-                </div>
-              </GreenBtn>
+              <Link href="../../RequestAccess">
+                <a>
+                  <GreenBtn>
+                    <div className={styles.btnElements}>
+                      <Typography>Request Access</Typography>
+                      <div className={styles.iconBtn}>
+                        <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                      </div>
+                    </div>
+                  </GreenBtn>
+                </a>
+              </Link>
             </div>
             <div className={styles.btn}>
-              <GrayBtn>
-                <div className={styles.btnElements}>
-                  <Typography>Request Quote</Typography>
-                  <div className={styles.iconBtn}>
-                    <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
-                  </div>
-                </div>
-              </GrayBtn>
+              <Link href="../../RequestQuote">
+                <a>
+                  <GrayBtn>
+                    <div className={styles.btnElements}>
+                      <Typography>Request Quote</Typography>
+                      <div className={styles.iconBtn}>
+                        <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                      </div>
+                    </div>
+                  </GrayBtn>
+                </a>
+              </Link>
             </div>
           </div>
         </div>
