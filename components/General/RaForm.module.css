@@ -6,7 +6,7 @@
     align-items: center;
 }
 .inputs {
-    padding: 5px 0px 5px 40px;
+    padding: 8px 0px 8px 40px;
     width: 100%;
     background-color: #EEEEEE;
     border: 1px solid white;
@@ -33,7 +33,7 @@
     margin: 20px 0px 20px 0px;
 }
 .inputSection {
-    margin: 20px 0 20px 0px;
+    margin: 10px 0 10px 0px;
 }
 .label {
     margin-bottom: 10px;
@@ -43,7 +43,7 @@
     font-weight: bold;
 }
 .checkBoxSection {
-    margin: 20px 0px 20px 0px;
+    margin: 10px 0px 20px 0px;
 }
 .textFieldContent {
     position: relative;
@@ -52,9 +52,8 @@
 }
 .placeholderImg {
     position: absolute;
-    bottom: 2px;
-    padding: 0px 5px 0px 3px;
+    bottom: 0px;
+    padding: 0px 3px 0px 3px;
+    margin: 1px;
     border-right: 1px solid gray;
-    display: flex;
-    align-items: center;
 }
