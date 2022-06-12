@@ -9,7 +9,7 @@ type Props = {
 function GreenBtn({ children }: Props) {
   return (
     <div>
-      <Button variant="contained">
+      <Button variant="contained" className={styles.btnColor}>
         <Typography className={styles.text}>{children}</Typography>
       </Button>
     </div>
