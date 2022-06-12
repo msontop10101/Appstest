@@ -1,0 +1,16 @@
+.sectionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.inputField {
+    display: flex;
+    align-items: center;
+}
+.inputField p {
+    margin: 5px 0px 5px 0px;
+}
+.sectionHeader {
+    display: flex;
+}

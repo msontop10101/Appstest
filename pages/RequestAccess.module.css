@@ -1,0 +1,7 @@
+.sectionContainer {
+    display: flex;
+}
+.formSection {
+    display: flex;
+    width: 60%;
+}
