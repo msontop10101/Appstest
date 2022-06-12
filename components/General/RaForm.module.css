@@ -50,10 +50,19 @@
     display: flex;
     align-items: center;
 }
-.placeholderImg {
+.placeholderImg { 
     position: absolute;
     bottom: 0px;
     padding: 0px 6px 0px 6px;
     margin: 1px;
     border-right: 1px solid gray;
+}
+@media screen and (max-width: 800px) {
+    .backIconBtn {
+        display: none;
+    }
+    .sectionHeader {
+        display: flex;
+        justify-content: center;
+    }
 }

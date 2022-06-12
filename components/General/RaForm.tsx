@@ -16,7 +16,7 @@ function RaForm() {
     <>
       <div className={styles.sectionContainer}>
         <div>
-          <div>
+          <div className={styles.backIconBtn}>
             <Link href="/">
               <a>
                 <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
@@ -30,7 +30,7 @@ function RaForm() {
           <form>
             <div>
               <div className={styles.inputSection}>
-                <Box sx={{}}>
+                <Box>
                   <div className={styles.label}>
                     <label>Work Email</label>
                   </div>

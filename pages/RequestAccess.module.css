@@ -8,3 +8,25 @@
     height: 100vh;
     align-items: center;
 }
+.mHeader {
+    display: none;
+}
+@media screen and (max-width: 800px) {
+    .serviceSection {
+        display: none;
+    }
+    .formSection {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+    .sectionContainer {
+        display: block;
+        background-color: #00690B;
+        height: 100vh;
+        padding: 20px;
+    }
+    .mHeader {
+        display: block;
+    }
+}

@@ -1,0 +1,16 @@
+.sectionContainer {
+    position: relative;
+    padding-bottom: 10px;
+}
+.backIconBtn {
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
+.headerImage {
+    display: flex;
+    justify-content: center;
+}
