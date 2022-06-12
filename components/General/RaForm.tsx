@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "./RaForm.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faMessage } from "@fortawesome/free-solid-svg-icons";
+import { Checkbox, Box } from "@mui/material";
+import { common } from "@mui/material/colors";
 import lock from "../../Assets/Images/ServiceSider/Emoji.png";
 import pimg from "../../Assets/Images/RAform/Message.png";
-import { TextField, Checkbox, Box } from "@mui/material";
 import GreenBtn from "./GreenBtn";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -15,7 +17,11 @@ function RaForm() {
       <div className={styles.sectionContainer}>
         <div>
           <div>
-            <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
+            <Link href="/">
+              <a>
+                <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
+              </a>
+            </Link>
           </div>
           <div className={styles.sectionHeader}>
             <p>Request Access</p>
@@ -42,11 +48,29 @@ function RaForm() {
               </div>
               <div className={styles.checkBoxSection}>
                 <div className={styles.inputField}>
-                  <Checkbox {...label} className={styles.checkBox} />
+                  <Checkbox
+                    {...label}
+                    className={styles.checkBox}
+                    sx={{
+                      color: common,
+                      "&.Mui-checked": {
+                        color: "black",
+                      },
+                    }}
+                  />
                   <p>I have read and I accept the Terms of use</p>
                 </div>
                 <div className={styles.inputField}>
-                  <Checkbox {...label} className={styles.checkBox} />
+                  <Checkbox
+                    {...label}
+                    className={styles.checkBox}
+                    sx={{
+                      color: common,
+                      "&.Mui-checked": {
+                        color: "black",
+                      },
+                    }}
+                  />
                   <p>
                     Send me occasional emails about Appstest&apos;s services
                     (unsubscribe at any time)
