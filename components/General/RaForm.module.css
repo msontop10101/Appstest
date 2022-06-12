@@ -1,8 +1,21 @@
 .sectionContainer {
+    width: 70%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+}
+.inputs {
+    padding: 5px 0px 5px 40px;
+    width: 100%;
+    background-color: #EEEEEE;
+    border: 1px solid white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.headerImage {
+    height: 10px;
 }
 .inputField {
     display: flex;
@@ -11,6 +24,37 @@
 .inputField p {
     margin: 5px 0px 5px 0px;
 }
+.checkBox {
+    padding: 9px 9px 9px 0px;
+}
 .sectionHeader {
     display: flex;
+    align-items: center;
+    margin: 20px 0px 20px 0px;
+}
+.inputSection {
+    margin: 20px 0 20px 0px;
+}
+.label {
+    margin-bottom: 10px;
+}
+.sectionHeader p {
+    padding-right: 15px;
+    font-weight: bold;
+}
+.checkBoxSection {
+    margin: 20px 0px 20px 0px;
+}
+.textFieldContent {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.placeholderImg {
+    position: absolute;
+    bottom: 2px;
+    padding: 0px 5px 0px 3px;
+    border-right: 1px solid gray;
+    display: flex;
+    align-items: center;
 }
