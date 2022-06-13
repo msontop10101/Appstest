@@ -9,14 +9,16 @@ function RequestAccess() {
   return (
     <>
       <div className={Styles.sectionContainer}>
-        <div className={Styles.mHeader}>
-          <MFormHeader />
-        </div>
-        <div className={Styles.serviceSection}>
-          <GreenServiceSection />
-        </div>
-        <div className={Styles.formSection}>
-          <RaForm />
+        <div className={Styles.sectionContent}>
+          <div className={Styles.mHeader}>
+            <MFormHeader />
+          </div>
+          <div className={Styles.serviceSection}>
+            <GreenServiceSection />
+          </div>
+          <div className={Styles.formSection}>
+            <RaForm />
+          </div>
         </div>
       </div>
     </>

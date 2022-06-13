@@ -29,4 +29,7 @@
     .mHeader {
         display: block;
     }
+    .sectionContent {
+        height: 90vh;
+    }
 }
