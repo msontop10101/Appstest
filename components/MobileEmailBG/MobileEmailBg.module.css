@@ -1,6 +1,7 @@
 .container {
     background-color: #00690B;
     padding: 20px;
+    width: 100%;
 }
 .formContainer {
     background-color: #ffffff;
