@@ -1,11 +1,10 @@
 import React from "react";
+import RequestQuoteComp from "../components/RequestQuote/RequestQuoteComp";
 
 function RequestQuote() {
   return (
     <>
-      <div>
-        <h2>Request Quote</h2>
-      </div>
+      <RequestQuoteComp />
     </>
   );
 }

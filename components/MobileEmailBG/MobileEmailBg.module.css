@@ -1,0 +1,15 @@
+.container {
+    background-color: #00690B;
+    padding: 20px;
+}
+.formContainer {
+    background-color: #ffffff;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.header {
+    display: flex;
+    padding: 15px 0px 15px 0px;
+    align-items: center;
+    justify-content: center;
+}

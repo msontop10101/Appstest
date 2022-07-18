@@ -1,0 +1,35 @@
+.container {
+    background-color: #00690B;
+    color: white;
+    padding: 20px;
+}
+.containerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 20px;
+}
+.contentWrapper {
+    width: 70%;
+}
+.iconsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    justify-items: center;
+    align-items: center;
+}
+.icons {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+}
+.icons > div {
+    margin-left: 10px;
+}
+.headerTexts > div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,33 @@
+.container {
+    width: 60%;
+}
+.containerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contentWrapper {
+    width: 80%;
+}
+.headerContent > div {
+    margin-bottom: 25px;
+}
+.headerTexts > div{
+    margin-bottom: 5px;
+}
+.headerOne {
+    display: flex;
+    align-items: center;
+}
+.headerOne > div {
+    margin-left: 10px;
+}
+.formContainer > div {
+    margin-bottom: 25px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

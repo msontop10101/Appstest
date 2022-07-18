@@ -1,0 +1,54 @@
+.container {
+    width: 60%;
+}
+.containerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contentWrapper {
+    width: 80%;
+}
+.headerContent > div {
+    margin-bottom: 25px;
+}
+.headerTexts > div{
+    margin-bottom: 5px;
+}
+.headerOne {
+    display: flex;
+    align-items: center;
+}
+.headerOne > div {
+    margin-left: 10px;
+}
+.formContainer > div {
+    margin-bottom: 25px;
+}
+.check {
+    display: flex;
+    align-items: center;
+}
+.link {
+    color:#00690B;
+    text-decoration: underline;
+}
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+    .containerContent {
+        align-items: initial;
+        height: 88vh;
+    }
+    .headerOne {
+        justify-content: center;
+    }
+    .backIcon {
+        display: none;
+    }
+    .headerContent {
+    margin-top: 30px;
+    }  
+}

@@ -1,0 +1,37 @@
+.containerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contentWrapper {
+    width: 80%;
+}
+.headerContent > div {
+    margin-bottom: 25px;
+}
+.headerTexts > div{
+    margin-bottom: 5px;
+}
+.headerOne {
+    display: flex;
+    align-items: center;
+}
+.headerOne > div {
+    margin-left: 10px;
+}
+.formContainer > div {
+    margin-bottom: 25px;
+}
+.check {
+    display: flex;
+    align-items: center;
+}
+@media screen and (max-width: 600px) {
+    .backIcon {
+        display: none
+    }
+    .headerOne {
+        justify-content: center;
+    }
+}

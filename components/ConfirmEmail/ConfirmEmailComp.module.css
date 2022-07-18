@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.contentContainer > div{
+    margin-bottom: 20px;
+}
+.contentContainer {
+    padding: 20px;
+    border: 1px solid rgb(192, 189, 189);
+    border-radius: 5px;
+}
+.contentWrapper {
+    width: 30%;
+}
+.headerContent > div {
+    margin-bottom: 10px;
+}
+.headerOne {
+    display: flex;
+    align-items: center;
+}
+.headerOne > div {
+    margin-left: 10px;
+}
+.headerTexts > div {
+    margin-bottom: 15px;
+}
+.link {
+    color: #00690B;
+    text-decoration: underline;
+}
+.footer {
+    text-align: center;
+    margin-top: 10px;
+}
+@media screen and (max-width: 600px) {
+    .contentWrapper {
+        width: 90%;
+    }
+}

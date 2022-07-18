@@ -1,0 +1,11 @@
+.container {
+    background-color: #00690B;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+.content {
+    width: 70%;
+}
