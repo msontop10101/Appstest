@@ -3,7 +3,7 @@ import CustomButton from "../CustomButton/CustomButton";
 import Styles from "./LoginForm.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { LoginFormImgs } from "../../files/data";
+import { LoginFormImgs, RLoginIcons } from "../../files/data";
 
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -14,6 +14,7 @@ import Divider from "@mui/material/Divider";
 import FormControl from "@mui/material/FormControl";
 import Typography from "@mui/material/Typography";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import MLoginInfoSec from "../LoginInfoSec/MLoginInfoSec";
 
 function LoginForm() {
   const headerStyles = {
@@ -23,6 +24,10 @@ function LoginForm() {
     fontSize: 15,
     marginBottom: 1,
     marginTop: 2,
+    color: {
+      xs: "#ffffff",
+      sm: "#000000",
+    },
   };
   const buttonStyles = {
     fontSize: "1.2rem",
@@ -40,7 +45,7 @@ function LoginForm() {
   };
   const headerMsg = {
     fontSize: 12,
-    color: "rgba(0, 0, 0, 0.7)",
+    color: { xs: "#ffffff", sm: "rgba(0, 0, 0, 0.7)" },
   };
   return (
     <>
@@ -48,7 +53,7 @@ function LoginForm() {
         <div className={Styles.containerContent}>
           <div className={Styles.contentWrapper}>
             <div className={Styles.headerContent}>
-              <div>
+              <div className={Styles.backIcon}>
                 <Link href="/">
                   <a>
                     <KeyboardBackspaceIcon />
@@ -60,8 +65,11 @@ function LoginForm() {
                   <Typography sx={headerOne} variant="h6">
                     Welcome Back
                   </Typography>
-                  <div>
+                  <div className={Styles.dwave}>
                     <Image src={LoginFormImgs[0]} alt="wave" />
+                  </div>
+                  <div className={Styles.mwave}>
+                    <Image src={RLoginIcons[1]} alt="wave" />
                   </div>
                 </div>
                 <div>
@@ -72,86 +80,94 @@ function LoginForm() {
               </div>
             </div>
             <div className={Styles.formContainer}>
-              <Box>
-                <FormControl>
-                  <div>
-                    <Grid container columnSpacing={3}>
-                      <Grid item xs={12}>
-                        <label>
-                          <Typography sx={labelStyles}>Work Email</Typography>
-                        </label>
-                        <TextField
-                          fullWidth
-                          InputProps={{
-                            startAdornment: (
-                              <InputAdornment position="start">
-                                <Image src={LoginFormImgs[2]} alt="password" />
-                                <Divider
-                                  sx={{ height: 28, m: 1.5 }}
-                                  orientation="vertical"
-                                />
-                              </InputAdornment>
-                            ),
-                          }}
-                          id="outlined-basic"
-                          size="small"
-                          variant="outlined"
-                          placeholder="Enter your work email address"
-                        />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <label>
-                          <Typography sx={labelStyles}>Password</Typography>
-                        </label>
-                        <TextField
-                          fullWidth
-                          InputProps={{
-                            startAdornment: (
-                              <InputAdornment position="start">
-                                <Image src={LoginFormImgs[1]} alt="password" />
-                                <Divider
-                                  sx={{ height: 28, m: 1.5 }}
-                                  orientation="vertical"
-                                />
-                              </InputAdornment>
-                            ),
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                <Typography variant="body1">Show</Typography>
-                              </InputAdornment>
-                            ),
-                          }}
-                          id="outlined-basic"
-                          size="small"
-                          variant="outlined"
-                          placeholder="Enter your password"
-                        />
+              <div>
+                <Box>
+                  <FormControl>
+                    <div>
+                      <Grid container columnSpacing={3}>
                         <Grid item xs={12}>
-                          <div className={Styles.fpswd}>
-                            <Link href="../../ForgotPassword">
-                              <a>
-                                <Typography>Forgot Password?</Typography>
-                              </a>
-                            </Link>
-                          </div>
+                          <label>
+                            <Typography sx={labelStyles}>Work Email</Typography>
+                          </label>
+                          <TextField
+                            fullWidth
+                            InputProps={{
+                              startAdornment: (
+                                <InputAdornment position="start">
+                                  <Image
+                                    src={LoginFormImgs[2]}
+                                    alt="password"
+                                  />
+                                  <Divider
+                                    sx={{ height: 28, m: 1.5 }}
+                                    orientation="vertical"
+                                  />
+                                </InputAdornment>
+                              ),
+                            }}
+                            id="outlined-basic"
+                            size="small"
+                            variant="outlined"
+                            placeholder="Enter your work email address"
+                          />
+                        </Grid>
+                        <Grid item xs={12}>
+                          <label>
+                            <Typography sx={labelStyles}>Password</Typography>
+                          </label>
+                          <TextField
+                            fullWidth
+                            InputProps={{
+                              startAdornment: (
+                                <InputAdornment position="start">
+                                  <Image
+                                    src={LoginFormImgs[1]}
+                                    alt="password"
+                                  />
+                                  <Divider
+                                    sx={{ height: 28, m: 1.5 }}
+                                    orientation="vertical"
+                                  />
+                                </InputAdornment>
+                              ),
+                              endAdornment: (
+                                <InputAdornment position="end">
+                                  <Typography variant="body1">Show</Typography>
+                                </InputAdornment>
+                              ),
+                            }}
+                            id="outlined-basic"
+                            size="small"
+                            variant="outlined"
+                            placeholder="Enter your password"
+                          />
+                          <Grid item xs={12}>
+                            <div className={Styles.fpswd}>
+                              <Link href="../../ForgotPassword">
+                                <a>
+                                  <Typography>Forgot Password?</Typography>
+                                </a>
+                              </Link>
+                            </div>
+                          </Grid>
                         </Grid>
                       </Grid>
-                    </Grid>
-                  </div>
-                </FormControl>
-              </Box>
-              <div>
-                <CustomButton
-                  color="primary"
-                  size="small"
-                  variant="contained"
-                  sx={buttonStyles}
-                  fullWidth={true}
-                >
-                  <Typography>
-                    <Box sx={{ textTransform: "capitalize" }}>Sign in</Box>
-                  </Typography>
-                </CustomButton>
+                    </div>
+                  </FormControl>
+                </Box>
+                <div>
+                  <CustomButton
+                    color="secondary"
+                    size="small"
+                    variant="contained"
+                    sx={buttonStyles}
+                    fullWidth={true}
+                  >
+                    <Typography>
+                      <Box sx={{ textTransform: "capitalize" }}>Sign in</Box>
+                    </Typography>
+                  </CustomButton>
+                </div>
               </div>
             </div>
           </div>

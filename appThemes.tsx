@@ -6,7 +6,7 @@ export const appThemes = createTheme({
       main: "#00690B",
     },
     secondary: {
-      main: "#f44336",
+      main: "#03510a",
     },
   },
   components: {
@@ -38,6 +38,9 @@ export const appThemes = createTheme({
             borderLeft: "none",
             borderRight: "none",
             borderColor: "primary",
+          },
+          "& input::placeholder": {
+            fontSize: 14,
           },
         },
       },

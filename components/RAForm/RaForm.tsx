@@ -42,6 +42,12 @@ function RaForm() {
       color: "#000000",
     },
   };
+  const textStyle = {
+    fontSize: {
+      xs: 14,
+      sm: 20,
+    },
+  };
   return (
     <>
       <div className={Styles.container}>
@@ -67,7 +73,7 @@ function RaForm() {
               </div>
             </div>
             <div className={Styles.formContainer}>
-              <Grid container rowSpacing={4}>
+              <Grid container rowSpacing={{ xs: 2, sm: 4 }}>
                 <Grid item xs={12}>
                   <label>
                     <Typography sx={labelStyles}>Work Email</Typography>
@@ -96,7 +102,7 @@ function RaForm() {
                     <div>
                       <Checkbox {...label} sx={checkedStyles} />
                     </div>
-                    <Typography>
+                    <Typography sx={textStyle}>
                       I have read and I agreee with the{" "}
                       <span className={Styles.link}>Terms of use</span>
                     </Typography>
@@ -107,7 +113,7 @@ function RaForm() {
                     <div>
                       <Checkbox {...label} sx={checkedStyles} />
                     </div>
-                    <Typography>
+                    <Typography sx={textStyle}>
                       Send me occasional email about AppsTest services
                       (unsubscribe at any time)
                     </Typography>

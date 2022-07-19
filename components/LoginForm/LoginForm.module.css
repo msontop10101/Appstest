@@ -27,3 +27,41 @@
     float: right;
     margin-top: 20px;
 }
+.backIcon {
+    display: block
+}
+.dwave {
+    display: block;
+}
+.mwave {
+    display: none;
+}
+@media screen and (max-width:600px) {
+    .container {
+        width: 100%;
+    }
+    .backIcon {
+        display:none;
+    }
+    .headerTexts {
+        color: white;
+    }
+    .fpswd {
+        color: white;
+    }
+    .dwave {
+        display: none;
+    }
+    .mwave {
+        display: block;
+    }
+    .headerContent {
+        margin-top: 20px;
+    }
+    .containerContent {
+        background-color: #00690B;
+        padding: 10px;
+        border: 1px solid gray;
+        border-radius: 5px;
+    }
+}

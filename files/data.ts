@@ -44,6 +44,11 @@ import mHeader from "../Assets/Images/Responsive/mobileheader.png"
 //VERIFY
 import verify from "../Assets/Images/Responsive/verified.png"
 
+//RESPONSIVE LOGIN ICONS
+import logo from "../Assets/Images/Responsive/APPSTEST.png"
+import wave from "../Assets/Images/Responsive/Emoji.png"
+
+
 export const LPsection3 = [
     {
         img: laptop1,
@@ -89,7 +94,7 @@ export const LoginGreenSideIcons = [
         name:"jira"
     },
     {
-        icon:github,
+        icon:gitlab,
         name:"github"
     },
     {
@@ -110,6 +115,7 @@ export const LoginGreenSideText = [
 ]
 
 export const LoginFormImgs = [emoji,key,message,lockEmoji,user,unlocked,check,organization,mHeader,verify]
+export const RLoginIcons = [logo,wave]
 
 export const PasswordRequirement = [
     {info: "Must contain a lowercase letter"},

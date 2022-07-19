@@ -7,9 +7,20 @@ type Props = {
 };
 
 function GreenBtn({ children }: Props) {
+  const btnStyle = {
+    backgroundColor: "#00690B",
+    color: "white",
+    border: 1,
+    borderColor: "#00690B",
+    "&: hover": {
+      backgroundColor: "transparent",
+      borderColor: "#00690B",
+      color: "#00690B",
+    },
+  };
   return (
     <div>
-      <Button className={styles.btnColor}>
+      <Button sx={btnStyle}>
         <Typography className={styles.text}>{children}</Typography>
       </Button>
     </div>

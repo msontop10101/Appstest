@@ -51,4 +51,7 @@
     .headerContent {
     margin-top: 30px;
     }  
+    .check {
+        align-items: baseline;
+    }
 }
