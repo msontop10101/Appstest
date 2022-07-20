@@ -8,6 +8,7 @@ type Props = {
   variant: any;
   fullWidth: boolean;
   sx: any;
+  type: string;
 };
 
 const CustomButton: React.FC<Props> = ({
@@ -17,10 +18,18 @@ const CustomButton: React.FC<Props> = ({
   variant,
   fullWidth,
   sx,
+  type,
 }) => {
   return (
     <>
-      <Button color={color} size={size} variant={variant} sx={sx} fullWidth>
+      <Button
+        color={color}
+        size={size}
+        variant={variant}
+        sx={sx}
+        type="submit"
+        fullWidth
+      >
         {children}
       </Button>
     </>

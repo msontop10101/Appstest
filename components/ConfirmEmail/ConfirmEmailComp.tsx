@@ -72,23 +72,23 @@ function ConfirmEmailComp() {
               </div>
             </div>
             <div>
-              <CustomButton
-                color="primary"
-                size="small"
-                variant="contained"
-                sx={buttonStyles}
-                fullWidth={true}
-              >
-                <Typography>
-                  <Link href="../../ProfileSetup">
-                    <a>
+              <Link href="../../ProfileSetup">
+                <a>
+                  <CustomButton
+                    color="primary"
+                    size="small"
+                    variant="contained"
+                    sx={buttonStyles}
+                    fullWidth={true}
+                  >
+                    <Typography>
                       <Box sx={{ textTransform: "capitalize" }}>
                         Confirm email address
                       </Box>
-                    </a>
-                  </Link>
-                </Typography>
-              </CustomButton>
+                    </Typography>
+                  </CustomButton>
+                </a>
+              </Link>
             </div>
             <div>
               <Typography sx={headerMsg}>

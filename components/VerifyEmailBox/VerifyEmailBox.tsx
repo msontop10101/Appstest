@@ -72,23 +72,23 @@ function VerifyEmailBox() {
             </div>
           </div>
           <div>
-            <CustomButton
-              color="primary"
-              size="small"
-              variant="contained"
-              sx={buttonStyles}
-              fullWidth={true}
-            >
-              <Typography>
-                <Link href="../../ConfirmEmail">
-                  <a>
+            <Link href="../../ConfirmEmail">
+              <a>
+                <CustomButton
+                  color="primary"
+                  size="small"
+                  variant="contained"
+                  sx={buttonStyles}
+                  fullWidth={true}
+                >
+                  <Typography>
                     <Box sx={{ textTransform: "capitalize" }}>
                       Open email app
                     </Box>
-                  </a>
-                </Link>
-              </Typography>
-            </CustomButton>
+                  </Typography>
+                </CustomButton>
+              </a>
+            </Link>
           </div>
           <div>
             <Typography sx={lMsg}> Skip I&apos;ll confirm later</Typography>

@@ -12,7 +12,6 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Divider from "@mui/material/Divider";
 import FormControl from "@mui/material/FormControl";
 import Typography from "@mui/material/Typography";
-import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import Button from "@mui/material/Button";
 
 function OPForm() {
@@ -160,7 +159,7 @@ function OPForm() {
                         />
                       </Grid>
                       <Grid item xs={2}>
-                        <CustomButton
+                        <Button
                           color="primary"
                           size="small"
                           variant="contained"
@@ -172,26 +171,31 @@ function OPForm() {
                               Invite
                             </Box>
                           </Typography>
-                        </CustomButton>
+                        </Button>
                       </Grid>
                     </Grid>
                   </div>
                 </FormControl>
               </Box>
               <div>
-                <CustomButton
-                  color="primary"
-                  size="small"
-                  variant="contained"
-                  sx={buttonStyles}
-                  fullWidth={true}
-                >
-                  <Typography>
-                    <Box sx={{ textTransform: "capitalize" }}>
-                      Setup Profile
-                    </Box>
-                  </Typography>
-                </CustomButton>
+                <Link href="../../Dashboard">
+                  <a>
+                    <CustomButton
+                      color="primary"
+                      size="small"
+                      variant="contained"
+                      sx={buttonStyles}
+                      fullWidth={true}
+                      type="submit"
+                    >
+                      <Typography>
+                        <Box sx={{ textTransform: "capitalize" }}>
+                          Setup Profile
+                        </Box>
+                      </Typography>
+                    </CustomButton>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
