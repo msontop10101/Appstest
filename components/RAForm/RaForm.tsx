@@ -17,6 +17,7 @@ import Checkbox from "@mui/material/Checkbox";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { useRouter } from "next/router";
 
 const validationSchema = yup.object({
   email: yup
@@ -26,13 +27,15 @@ const validationSchema = yup.object({
 });
 
 function RaForm() {
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       email: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
+      router.push("/VerifyEmail");
     },
   });
   const headerOne = {
@@ -107,7 +110,8 @@ function RaForm() {
                           </InputAdornment>
                         ),
                       }}
-                      id="outlined-basic"
+                      id="email"
+                      name="email"
                       size="small"
                       variant="outlined"
                       placeholder="Enter your work email address"

@@ -34,7 +34,7 @@ function PSetupForm() {
         },
         validationSchema: validationSchema,
         onSubmit: function (values) {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
             router.push("/OrganisationProfileSetup");
         }
     });

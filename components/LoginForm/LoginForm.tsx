@@ -16,6 +16,7 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { useRouter } from "next/router";
 
 const validationSchema = yup.object({
   email: yup
@@ -30,6 +31,7 @@ interface State {
 }
 
 const LoginForm = () => {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -41,7 +43,8 @@ const LoginForm = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
+      router.push("/Dashboard");
     },
   });
   const labelStyles = {
@@ -72,7 +75,7 @@ const LoginForm = () => {
     color: { xs: "#ffffff", sm: "rgba(0, 0, 0, 0.7)" },
   };
   const pshow = {
-    fontSize: 12,
+    fontSize: 14,
     cursor: "pointer",
   };
   return (

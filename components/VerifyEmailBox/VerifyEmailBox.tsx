@@ -75,6 +75,7 @@ function VerifyEmailBox() {
             <Link href="../../ConfirmEmail">
               <a>
                 <CustomButton
+                  type="submit"
                   color="primary"
                   size="small"
                   variant="contained"

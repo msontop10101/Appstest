@@ -16,6 +16,7 @@ var Typography_1 = require("@mui/material/Typography");
 var KeyboardBackspace_1 = require("@mui/icons-material/KeyboardBackspace");
 var formik_1 = require("formik");
 var yup = require("yup");
+var router_1 = require("next/router");
 var validationSchema = yup.object({
     email: yup
         .string()
@@ -24,6 +25,7 @@ var validationSchema = yup.object({
     password: yup.string().min(8).required("Password is required")
 });
 var LoginForm = function () {
+    var router = router_1.useRouter();
     var _a = react_1.useState(false), showPassword = _a[0], setShowPassword = _a[1];
     var handleClickShowPassword = function () {
         setShowPassword(!showPassword);
@@ -35,7 +37,8 @@ var LoginForm = function () {
         },
         validationSchema: validationSchema,
         onSubmit: function (values) {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
+            router.push("/Dashboard");
         }
     });
     var labelStyles = {
@@ -66,7 +69,7 @@ var LoginForm = function () {
         color: { xs: "#ffffff", sm: "rgba(0, 0, 0, 0.7)" }
     };
     var pshow = {
-        fontSize: 12,
+        fontSize: 14,
         cursor: "pointer"
     };
     return (react_1["default"].createElement(react_1["default"].Fragment, null,

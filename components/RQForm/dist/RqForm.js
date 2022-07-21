@@ -36,8 +36,8 @@ function RqForm() {
         },
         validationSchema: validationSchema,
         onSubmit: function (values) {
-            alert(JSON.stringify(values, null, 2));
-            router.push("/ProfileSetup");
+            // alert(JSON.stringify(values, null, 2));
+            router.push("/VerifyEmail");
         }
     });
     var headerOne = {

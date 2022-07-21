@@ -28,6 +28,7 @@ var Checkbox_1 = require("@mui/material/Checkbox");
 var label = { inputProps: { "aria-label": "Checkbox demo" } };
 var formik_1 = require("formik");
 var yup = require("yup");
+var router_1 = require("next/router");
 var validationSchema = yup.object({
     email: yup
         .string()
@@ -35,13 +36,15 @@ var validationSchema = yup.object({
         .required("Email is required")
 });
 function RaForm() {
+    var router = router_1.useRouter();
     var formik = formik_1.useFormik({
         initialValues: {
             email: ""
         },
         validationSchema: validationSchema,
         onSubmit: function (values) {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
+            router.push("/VerifyEmail");
         }
     });
     var headerOne = {
@@ -96,7 +99,7 @@ function RaForm() {
                                             startAdornment: (react_1["default"].createElement(InputAdornment_1["default"], { position: "start" },
                                                 react_1["default"].createElement(image_1["default"], { src: data_1.LoginFormImgs[2], alt: "password" }),
                                                 react_1["default"].createElement(Divider_1["default"], { sx: { height: 28, m: 1.5 }, orientation: "vertical" })))
-                                        }, id: "outlined-basic", size: "small", variant: "outlined", placeholder: "Enter your work email address", value: formik.values.email, onChange: formik.handleChange, error: formik.touched.email && Boolean(formik.errors.email), helperText: formik.touched.email && formik.errors.email })),
+                                        }, id: "email", name: "email", size: "small", variant: "outlined", placeholder: "Enter your work email address", value: formik.values.email, onChange: formik.handleChange, error: formik.touched.email && Boolean(formik.errors.email), helperText: formik.touched.email && formik.errors.email })),
                                 react_1["default"].createElement(Grid_1["default"], { item: true, xs: 12 },
                                     react_1["default"].createElement("div", { className: RaForm_module_css_1["default"].check },
                                         react_1["default"].createElement("div", null,

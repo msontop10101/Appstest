@@ -155,6 +155,7 @@ function ResetPasswordFrom() {
               </Grid>
               <div>
                 <CustomButton
+                  type="submit"
                   color="primary"
                   size="small"
                   variant="contained"

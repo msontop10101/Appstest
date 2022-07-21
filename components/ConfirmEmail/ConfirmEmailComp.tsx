@@ -75,6 +75,7 @@ function ConfirmEmailComp() {
               <Link href="../../ProfileSetup">
                 <a>
                   <CustomButton
+                  type="submit"
                     color="primary"
                     size="small"
                     variant="contained"
