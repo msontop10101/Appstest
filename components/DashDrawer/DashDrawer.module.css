@@ -1,0 +1,42 @@
+.fullOpen {
+    margin-left: 50px;
+}
+
+.listText {
+    margin-left: 10px;
+    display: none;
+}
+
+.listTextDisplay {
+    margin-left: 10px;
+    display: block
+}
+
+.toolbarHeader {
+    margin: 40px;
+}
+
+.appbarIconsContainer {
+    display: flex;
+    margin-left: auto;
+}
+
+.appbarIcon {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.userProfile {
+    display: flex;
+    margin-right: 50px;
+}
+
+@media screen and (max-width: 600px) {
+    .listTextDisplay {
+        display: none;
+    }
+
+    .listText {
+        display: block;
+    }
+}

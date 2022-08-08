@@ -48,6 +48,21 @@ import verify from "../Assets/Images/Responsive/verified.png"
 import logo from "../Assets/Images/Responsive/APPSTEST.png"
 import wave from "../Assets/Images/Responsive/Emoji.png"
 
+//DASHBOARD ICONS
+import dLogo from "../Assets/Images/Dashboard/BMLogo.png"
+
+//DASHBOARD NAVIGATION ICONS
+import icon1 from "../Assets/Images/Dashboard/Dashboard.png"
+import icon2 from "../Assets/Images/Dashboard/Tests.png"
+import icon3 from "../Assets/Images/Dashboard/Teams.png"
+import icon4 from "../Assets/Images/Dashboard/Reports.png"
+
+//DASHBOARD APPBAR ICONS 
+import aicon1 from "../Assets/Images/Dashboard/Chat.png"
+import aicon2 from "../Assets/Images/Dashboard/Notification.png"
+import aicon3 from "../Assets/Images/Dashboard/Setting.png"
+import aicon4 from "../Assets/Images/Dashboard/Upload.png"
+
 
 export const LPsection3 = [
     {
@@ -122,4 +137,41 @@ export const PasswordRequirement = [
     {info: "Must contain a uppercase letter"},
     {info: "Must contain a number"},
     {info: "Must contain a non-alphanumeric charater"}
+]
+
+//DASHBOARD
+export const DImages = [dLogo]
+
+export const DashNavElements = [
+    {
+        icon: icon1,
+        name: "Dashboard"
+    },
+    {
+        icon: icon2,
+        name: "Tests"
+    },
+    {
+        icon: icon3,
+        name: "Teams"
+    },
+    {
+        icon: icon4,
+        name: "Report"
+    },
+]
+
+export const appbarIcons = [
+    {
+        icon: aicon1
+    },
+    {
+        icon: aicon2
+    },
+    {
+        icon: aicon3
+    },
+    {
+        icon: aicon4
+    },
 ]

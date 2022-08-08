@@ -26,10 +26,6 @@ const validationSchema = yup.object({
   password: yup.string().min(8).required("Password is required"),
 });
 
-interface State {
-  showPassword: boolean;
-}
-
 const LoginForm = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);

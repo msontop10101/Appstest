@@ -13,6 +13,7 @@ import CustomButton from "../CustomButton/CustomButton";
 import Box from "@mui/material/Box";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { useRouter } from "next/router";
 
 const validationSchema = yup.object({
   email: yup
@@ -22,13 +23,15 @@ const validationSchema = yup.object({
 });
 
 function ForgotPswdForm() {
+  let router = useRouter();
   const formik = useFormik({
     initialValues: {
       email: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
+      router.push("/ResetPassword");
     },
   });
   const headerOne = {

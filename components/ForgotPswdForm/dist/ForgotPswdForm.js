@@ -14,6 +14,7 @@ var CustomButton_1 = require("../CustomButton/CustomButton");
 var Box_1 = require("@mui/material/Box");
 var formik_1 = require("formik");
 var yup = require("yup");
+var router_1 = require("next/router");
 var validationSchema = yup.object({
     email: yup
         .string()
@@ -21,13 +22,15 @@ var validationSchema = yup.object({
         .required("Email is required")
 });
 function ForgotPswdForm() {
+    var router = router_1.useRouter();
     var formik = formik_1.useFormik({
         initialValues: {
             email: ""
         },
         validationSchema: validationSchema,
         onSubmit: function (values) {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
+            router.push("/ResetPassword");
         }
     });
     var headerOne = {
