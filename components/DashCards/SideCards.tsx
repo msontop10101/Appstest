@@ -5,6 +5,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Link from "next/link";
 
 const bull = (
   <Box
@@ -15,27 +16,44 @@ const bull = (
   </Box>
 );
 
-const SideCards = () => {
+type Props = {
+  bgColor: string;
+  headtext: string;
+  bodytext: string;
+  button: string;
+};
+
+const SideCards: React.FC<Props> = ({
+  bgColor,
+  headtext,
+  bodytext,
+  button,
+}) => {
+  const cardStyles = {
+    width: "100%",
+    backgroundColor: bgColor,
+  };
+  const headStyles = {
+    fontSize: "1.1rem",
+    fontWeight: "bold",
+    margin: "15px 0px 15px 0px",
+  };
+  const linkStyles = {
+    color: "#00690B",
+    textDecoration: "underline",
+  };
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={cardStyles}>
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
-        </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
+        <Typography sx={headStyles}>{headtext}</Typography>
+        <Typography variant="body2">{bodytext}</Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Link href="#">
+          <a>
+            <Typography sx={linkStyles}>{button}</Typography>
+          </a>
+        </Link>
       </CardActions>
     </Card>
   );

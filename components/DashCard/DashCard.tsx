@@ -4,6 +4,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CustomButton from "../CustomButton/CustomButton";
+import CustomOutlinedBtn from "../Buttons/CustomOutlinedBtn";
 import Box from "@mui/material/Box";
 
 const DashCard = () => {
@@ -18,6 +19,9 @@ const DashCard = () => {
       backgroundColor: "#00690B",
     },
   };
+  const OutlinedBtnStyles = {
+    fontSize: "1.2rem",
+  };
   return (
     <Card sx={{ padding: 2 }}>
       <CardContent>
@@ -27,20 +31,13 @@ const DashCard = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <CustomButton
-          color="primary"
-          size="small"
-          variant="contained"
-          sx={buttonStyles}
-          type="submit"
-          fullWidth={true}
-        >
-          <Typography>
+        <CustomOutlinedBtn>
+          <Typography sx={{ fontSize: "1.1rem" }}>
             <Box sx={{ textTransform: "capitalize" }}>
-              Take the product tour
+              Take our product tour
             </Box>
           </Typography>
-        </CustomButton>
+        </CustomOutlinedBtn>
         <CustomButton
           color="primary"
           size="small"

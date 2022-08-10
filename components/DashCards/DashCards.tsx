@@ -21,6 +21,22 @@ const DashCards = (props: any) => {
   const infoCards = {
     width: "100%",
     marginRight: "20px",
+    padding: 2,
+  };
+  const stepStyles = {
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    margin: "15px 0px 15px 0px",
+    color: "#00690B",
+  };
+  const headStyles = {
+    fontSize: "1.1rem",
+    fontWeight: "bold",
+    margin: "15px 0px 15px 0px",
+  };
+  const linkStyles = {
+    color: "#00690B",
+    textDecoration: "underline",
   };
   return (
     <div className={Styles.cardsContainer}>
@@ -30,14 +46,14 @@ const DashCards = (props: any) => {
           <div key={index} className={Styles.cardsContainer}>
             <Card sx={infoCards}>
               <CardContent>
-                <Typography>{infos.no}</Typography>
-                <Typography>{infos.head}</Typography>
+                <Typography sx={stepStyles}>{infos.no}</Typography>
+                <Typography sx={headStyles}>{infos.head}</Typography>
                 <Typography variant="body2">{infos.body}</Typography>
               </CardContent>
               <CardActions>
                 <Link href="#">
                   <a>
-                    <Typography>{infos.button}</Typography>
+                    <Typography sx={linkStyles}>{infos.button}</Typography>
                   </a>
                 </Link>
               </CardActions>

@@ -1,3 +1,18 @@
 .hInfo {
     width: 55%;
 }
+.side {
+    margin-bottom: 25px
+}
+.container {
+    display: flex;
+}
+.rightSide {
+    display: flex;
+    width: 70%;
+}
+.leftSide {
+    display: flex;
+    width: 20%;
+    margin-left: 25px;
+}
