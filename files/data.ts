@@ -175,3 +175,40 @@ export const appbarIcons = [
         icon: aicon4
     },
 ]
+
+//STEPS TO CREATE TEST
+export const steps = [
+    {
+        no: "Step 1",
+        head: "Invite Teams",
+        body: "You can invite more than your team members to join before moving your product to production",
+        button: "Invite team"
+    },
+    {
+        no: "Step 2",
+        head: "Create a test",
+        body: "You can create your test by providing every nessecary info about your product for testing",
+        button: "Create test"
+    },
+    {
+        no: "Step 3",
+        head: "Test result",
+        body: "You can upload your test tasks and we connect a certified tester to your project",
+        button: "Upload"
+    }
+]
+
+//HELP AND RESOURCES
+
+export const hr = [
+    {
+        head: "New to Software Testing?",
+        body: "Start with the course Bug Reproduction to learn about what bugs are and how to document bug reports by reproducing the bugs submited by more experienced testers.",
+        button: "Bug Reproductions"
+    },
+    {
+        head: "Experienced?",
+        body: "Start with the course Exploratory Testing and practice your skill on live websites and apps!",
+        button: "Exploratory Testing"
+    },
+]

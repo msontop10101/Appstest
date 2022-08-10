@@ -19,7 +19,7 @@ import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined
 import Styles from "./DashDrawer.module.css";
 import Image from "next/image";
 import { DImages, DashNavElements, appbarIcons } from "../../files/data";
-// import CustomCard from "../Card/CustomCard";
+import DashContent from "../DashContent/DashContent";
 
 const drawerWidth = 240;
 
@@ -177,7 +177,7 @@ const DashDrawer = () => {
               boxSizing: "border-box",
               width: drawerWidth,
               borderRight: "none",
-              boxShadow: "5px 10px gray"
+              boxShadow: "5px 10px #FAF9F6",
             },
           }}
           open
@@ -202,13 +202,12 @@ const DashDrawer = () => {
           <ArrowForwardIosIcon />
         </IconButton>
         <div className={Styles.firstSide}>
-          <Typography>Welcome to AppsTest</Typography>
+          {/* <Typography>Welcome to AppsTest</Typography>
           <Typography paragraph>
             We are a platform of software testers. Take your time to learn about
             the platform and our rules - you don&apos;t have to rush anything
-          </Typography>
-          <div>
-          </div>
+          </Typography> */}
+          <DashContent />
         </div>
       </Box>
     </Box>

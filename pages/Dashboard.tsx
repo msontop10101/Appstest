@@ -3,9 +3,9 @@ import DashboardComp from "../components/DashboardComp/DashboardComp";
 
 function Dashboard() {
   return (
-    <>
-      <DashboardComp/>
-    </>
+    <div style={{ backgroundColor: "#FAF9F6" }}>
+      <DashboardComp />
+    </div>
   );
 }
 
