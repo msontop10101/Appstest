@@ -30,6 +30,9 @@
     display: flex;
     margin-right: 50px;
 }
+.appbarMobileLogo {
+    display: none;
+}
 
 @media screen and (max-width: 600px) {
     .listTextDisplay {
@@ -39,4 +42,14 @@
     .listText {
         display: block;
     }
+    .toolbarHeader, .appbarIconsContainer {
+        display: none;
+    }
+    .appbarMobileLogo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%
+    }
+
 }

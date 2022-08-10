@@ -10,6 +10,12 @@ const CustomOutlinedBtn: React.FC<Props> = ({ children }) => {
   const btnStyles = {
     padding: 1,
     marginTop: "16px",
+    marginRight: {
+      sm: "20px",
+    },
+    width: {
+      sm: "200px",
+    },
   };
   return (
     <Button sx={btnStyles} size="small" variant="outlined">

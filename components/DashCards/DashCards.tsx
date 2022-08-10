@@ -20,7 +20,7 @@ const bull = (
 const DashCards = (props: any) => {
   const infoCards = {
     width: "100%",
-    marginRight: "20px",
+    marginRight: "15px",
     padding: 2,
   };
   const stepStyles = {
@@ -38,8 +38,11 @@ const DashCards = (props: any) => {
     color: "#00690B",
     textDecoration: "underline",
   };
+  const actionStyles = {
+    padding: "10px 0px 0px 0px",
+  };
   return (
-    <div className={Styles.cardsContainer}>
+    <Box className={Styles.cardsContainer}>
       {" "}
       {props.steps.map((infos: any, index: number) => {
         return (
@@ -49,19 +52,19 @@ const DashCards = (props: any) => {
                 <Typography sx={stepStyles}>{infos.no}</Typography>
                 <Typography sx={headStyles}>{infos.head}</Typography>
                 <Typography variant="body2">{infos.body}</Typography>
+                <CardActions sx={actionStyles}>
+                  <Link href="#">
+                    <a>
+                      <Typography sx={linkStyles}>{infos.button}</Typography>
+                    </a>
+                  </Link>
+                </CardActions>
               </CardContent>
-              <CardActions>
-                <Link href="#">
-                  <a>
-                    <Typography sx={linkStyles}>{infos.button}</Typography>
-                  </a>
-                </Link>
-              </CardActions>
             </Card>
           </div>
         );
       })}
-    </div>
+    </Box>
   );
 };
 

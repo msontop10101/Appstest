@@ -6,11 +6,13 @@ import Typography from "@mui/material/Typography";
 import CustomButton from "../CustomButton/CustomButton";
 import CustomOutlinedBtn from "../Buttons/CustomOutlinedBtn";
 import Box from "@mui/material/Box";
+import Styles from "./DashCard.module.css";
 
 const DashCard = () => {
   const buttonStyles = {
     fontSize: "1.2rem",
     width: {
+      xs: 200,
       sm: 200,
     },
     marginTop: 2,
@@ -22,8 +24,16 @@ const DashCard = () => {
   const OutlinedBtnStyles = {
     fontSize: "1.2rem",
   };
+  const cardStyles = {
+    padding: 2,
+    marginRight: "15px",
+    textAlign: {
+      xs: "center",
+      sm: "left",
+    },
+  };
   return (
-    <Card sx={{ padding: 2 }}>
+    <Card sx={cardStyles}>
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           We are pleased to show you the key functionalities of AppsTest. This
@@ -31,27 +41,31 @@ const DashCard = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <CustomOutlinedBtn>
-          <Typography sx={{ fontSize: "1.1rem" }}>
-            <Box sx={{ textTransform: "capitalize" }}>
-              Take our product tour
-            </Box>
-          </Typography>
-        </CustomOutlinedBtn>
-        <CustomButton
-          color="primary"
-          size="small"
-          variant="contained"
-          sx={buttonStyles}
-          type="submit"
-          fullWidth={true}
-        >
-          <Typography>
-            <Box sx={{ textTransform: "capitalize" }}>
-              Create your free trial
-            </Box>
-          </Typography>
-        </CustomButton>
+        <div className={Styles.groupContainer}>
+          <div className={Styles.groupBtns}>
+            <CustomOutlinedBtn>
+              <Typography sx={{ fontSize: "1.1rem" }}>
+                <Box sx={{ textTransform: "capitalize" }}>
+                  Take our product tour
+                </Box>
+              </Typography>
+            </CustomOutlinedBtn>
+            <CustomButton
+              color="primary"
+              size="small"
+              variant="contained"
+              sx={buttonStyles}
+              type="submit"
+              fullWidth={true}
+            >
+              <Typography>
+                <Box sx={{ textTransform: "capitalize" }}>
+                  Create your free trial
+                </Box>
+              </Typography>
+            </CustomButton>
+          </div>
+        </div>
       </CardActions>
     </Card>
   );

@@ -42,19 +42,22 @@ const SideCards: React.FC<Props> = ({
     color: "#00690B",
     textDecoration: "underline",
   };
+  const actionStyles = {
+    padding: "10px 0px 0px 0px",
+  };
   return (
     <Card sx={cardStyles}>
       <CardContent>
         <Typography sx={headStyles}>{headtext}</Typography>
         <Typography variant="body2">{bodytext}</Typography>
+        <CardActions sx={actionStyles}>
+          <Link href="#">
+            <a>
+              <Typography sx={linkStyles}>{button}</Typography>
+            </a>
+          </Link>
+        </CardActions>
       </CardContent>
-      <CardActions>
-        <Link href="#">
-          <a>
-            <Typography sx={linkStyles}>{button}</Typography>
-          </a>
-        </Link>
-      </CardActions>
     </Card>
   );
 };

@@ -23,7 +23,10 @@ const DashContent = () => {
   };
   const subHeading2 = {
     fontWeight: "bold",
-    margin: "-25px 0px 5px 0px",
+    margin: {
+      sm: "-25px 0px 5px 0px",
+      xs: "15px 0px 15px 0px",
+    },
   };
   return (
     <>

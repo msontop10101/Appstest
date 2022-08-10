@@ -1,11 +1,9 @@
-.cardsContainer {
+.groupContainer {
     display: flex;
 }
-
 @media screen and (max-width: 600px) {
-    .cardsContainer {
+    .groupContainer {
         display: flex;
         flex-direction: column;
-        margin-bottom: 25px;
     }
 }

@@ -122,9 +122,14 @@ const DashDrawer = () => {
         }}
       >
         <Toolbar>
-          {/* <Typography variant="h6" noWrap component="div">
-            Beta Money
-          </Typography> */}
+          <div className={Styles.appbarMobileLogo}>
+            <div>
+              <Image src={DImages[0]} alt="logo" />
+            </div>
+            <div>
+              <MenuIcon />
+            </div>
+          </div>
           <div className={Styles.appbarIconsContainer}>
             {appbarIcons.map((icons, index) => {
               const { icon } = icons;
@@ -147,9 +152,7 @@ const DashDrawer = () => {
             edge="start"
             onClick={handleFullOpen}
             sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
+          ></IconButton>
         </Toolbar>
       </AppBar>
       <Box
