@@ -15,6 +15,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
 import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
 import Styles from "./DashDrawer.module.css";
 import Image from "next/image";
@@ -57,11 +58,17 @@ const DashDrawer = () => {
     backgroundColor: "#00690B",
     padding: 3,
   };
+  const avatarStyle = {
+    backgroundColor: "white",
+  };
+  const arrowIconStyle = {
+    color: "#00690B",
+  };
 
   const drawerWidth = 240;
 
   const drawer = (
-    <div>
+    <div className={Styles.listContainer}>
       <Toolbar sx={toolbarHeader}>
         <div className={Styles.toolbarHeader}>
           <Image src={DImages[0]} alt="logo" />
@@ -74,7 +81,11 @@ const DashDrawer = () => {
           onClick={handleDrawerClose}
           sx={{ mr: 2, display: { sm: "none" } }}
         >
-          <ArrowBackIosNewIcon />
+          <div className={Styles.backwardIcon}>
+            <Avatar sx={avatarStyle}>
+              <ArrowBackIosNewIcon sx={arrowIconStyle} />
+            </Avatar>
+          </div>
         </IconButton>
       ) : (
         <IconButton
@@ -82,7 +93,11 @@ const DashDrawer = () => {
           onClick={handleFullOpen}
           sx={{ mr: 2, display: { sm: "none" } }}
         >
-          <ArrowForwardIosIcon />
+          <div className={Styles.forwardIcon}>
+            <Avatar sx={avatarStyle}>
+              <ArrowForwardIosIcon sx={arrowIconStyle} />
+            </Avatar>
+          </div>
         </IconButton>
       )}
       <List>
@@ -202,7 +217,9 @@ const DashDrawer = () => {
           onClick={handleDrawerToggle}
           sx={{ mr: 2, display: { sm: "none" } }}
         >
-          <ArrowForwardIosIcon />
+          <Avatar sx={avatarStyle}>
+            <ArrowForwardIosIcon sx={arrowIconStyle} />
+          </Avatar>
         </IconButton>
         <div className={Styles.firstSide}>
           {/* <Typography>Welcome to AppsTest</Typography>
