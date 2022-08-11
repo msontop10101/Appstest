@@ -63,6 +63,12 @@ import aicon2 from "../Assets/Images/Dashboard/Notification.png"
 import aicon3 from "../Assets/Images/Dashboard/Setting.png"
 import aicon4 from "../Assets/Images/Dashboard/Upload.png"
 
+//MDOAL DEVICE IMAGES STEP 1
+import ios from "../Assets/Images/ModalStep1/ios.png"
+import android from "../Assets/Images/ModalStep1/android.png"
+import web from "../Assets/Images/ModalStep1/web.png"
+import api from "../Assets/Images/ModalStep1/api.png"
+
 
 export const LPsection3 = [
     {
@@ -211,4 +217,28 @@ export const hr = [
         body: "Start with the course Exploratory Testing and practice your skill on live websites and apps!",
         button: "Exploratory Testing"
     },
+]
+
+//MODAL DEVICE SELECTION AND LINK
+export const dSelectAndLink = [
+    {
+        name: "Android",
+        img: android,
+        link: "#"
+    },
+    {
+        name: "IOS",
+        img: ios,
+        link: "#"
+    },
+    {
+        name: "Web",
+        img: web,
+        link: "#"
+    },
+    {
+        name: "API",
+        img: api,
+        link: "#"
+    }
 ]

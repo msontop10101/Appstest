@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CustomButton from "../CustomButton/CustomButton";
 import CustomOutlinedBtn from "../Buttons/CustomOutlinedBtn";
+import CreateTestModal from "../CreateTestModal/CreateTestModal";
 import Box from "@mui/material/Box";
 import Styles from "./DashCard.module.css";
 
@@ -32,6 +33,13 @@ const DashCard = () => {
       sm: "left",
     },
   };
+  const CardActionsStyle = {
+    display: "flex",
+    justifyContent: {
+      xs: "center",
+      sm: "flex-start",
+    },
+  };
   return (
     <Card sx={cardStyles}>
       <CardContent>
@@ -40,9 +48,9 @@ const DashCard = () => {
           tour take you about 5 minutes - you will be a pro in no time
         </Typography>
       </CardContent>
-      <CardActions>
-        <div className={Styles.groupContainer}>
-          <div className={Styles.groupBtns}>
+      <CardActions sx={CardActionsStyle}>
+        <div className={Styles.groupBtns}>
+          <div>
             <CustomOutlinedBtn>
               <Typography sx={{ fontSize: "1.1rem" }}>
                 <Box sx={{ textTransform: "capitalize" }}>
@@ -50,20 +58,9 @@ const DashCard = () => {
                 </Box>
               </Typography>
             </CustomOutlinedBtn>
-            <CustomButton
-              color="primary"
-              size="small"
-              variant="contained"
-              sx={buttonStyles}
-              type="submit"
-              fullWidth={true}
-            >
-              <Typography>
-                <Box sx={{ textTransform: "capitalize" }}>
-                  Create your free trial
-                </Box>
-              </Typography>
-            </CustomButton>
+          </div>
+          <div>
+            <CreateTestModal />
           </div>
         </div>
       </CardActions>

@@ -1,9 +1,13 @@
-.groupContainer {
+.groupBtns {
     display: flex;
 }
 @media screen and (max-width: 600px) {
-    .groupContainer {
+    .groupBtns {
         display: flex;
         flex-direction: column;
+    }
+    .groupBtnsContainer {
+        display: flex;
+        justify-content: center
     }
 }
