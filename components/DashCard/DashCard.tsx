@@ -27,7 +27,10 @@ const DashCard = () => {
   };
   const cardStyles = {
     padding: 2,
-    marginRight: "15px",
+    marginRight: {
+      xs: "0px",
+      sm: "15px",
+    },
     textAlign: {
       xs: "center",
       sm: "left",
