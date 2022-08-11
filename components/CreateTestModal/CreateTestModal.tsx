@@ -13,6 +13,7 @@ import { dSelectAndLink } from "../../files/data";
 
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
+import Grid from "@mui/material/Grid";
 import Image from "next/image";
 
 const style = {
@@ -21,7 +22,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   minWidth: {
-    xs: "100%",
+    xs: "90%",
     sm: "35%",
   },
   bgcolor: "background.paper",
@@ -67,6 +68,11 @@ const CreateTestModal = () => {
   const modalImageLabelStyle = {
     fontSize: "14px",
     marginTop: "10px",
+  };
+  const iGridStyle = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   };
 
   return (
@@ -117,23 +123,23 @@ const CreateTestModal = () => {
                 </Typography>
               </div>
               <div>
-                <Stack direction="row" spacing={2}>
+                <Grid container spacing={2}>
                   {dSelectAndLink.map((contents, index) => {
                     const { name, img, link } = contents;
                     return (
-                      <div key={index}>
-                        <div>
+                      <React.Fragment key={index}>
+                        <Grid item xs={6} sm={3} sx={iGridStyle}>
                           <Avatar variant="square" sx={avatarStyle}>
                             <Image src={img} alt={name} />
                           </Avatar>
                           <Typography sx={modalImageLabelStyle}>
                             {name}
                           </Typography>
-                        </div>
-                      </div>
+                        </Grid>
+                      </React.Fragment>
                     );
                   })}
-                </Stack>
+                </Grid>
               </div>
             </div>
           </div>
