@@ -3,7 +3,6 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import CustomButton from "../CustomButton/CustomButton";
 import CustomOutlinedBtn from "../Buttons/CustomOutlinedBtn";
 import CreateTestModal from "../CreateTestModal/CreateTestModal";
 import Box from "@mui/material/Box";

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -8,13 +8,15 @@ import Divider from "@mui/material/Divider";
 import Styles from "./CreateTestModal.module.css";
 import GrayBtn from "../General/GrayBtn";
 import GreenBtn from "../General/GreenBtn";
+import { Grid, Avatar } from "@mui/material";
+import Image from "next/image";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import { dSelectAndLink } from "../../files/data";
-
-import Avatar from "@mui/material/Avatar";
-import Stack from "@mui/material/Stack";
-import Grid from "@mui/material/Grid";
-import Image from "next/image";
+import ChooseOs from "../ModalPages/ChooseOs";
+import AndroidStepOne from "../ModalPages/AndroidModalSteps/AndroidStepOne";
+import AndroidStepTwo from "../ModalPages/AndroidModalSteps/AndroidStepTwo";
+import AndroidStepThree from "../ModalPages/AndroidModalSteps/AndroidStepThree";
+import AndroidStepFour from "../ModalPages/AndroidModalSteps/AndroidStepFour";
 
 const style = {
   position: "absolute" as "absolute",
@@ -32,9 +34,18 @@ const style = {
 };
 
 const CreateTestModal = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [step, setStep] = useState(0);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const handleBackButton = () => {
+    step > 0 && setStep(step - 1);
+  };
+  const handleNextButton = () => {
+    step < 4 && setStep(step + 1);
+  };
+
+  useEffect(() => {}, []);
 
   const buttonStyles = {
     fontSize: "1.2rem",
@@ -48,7 +59,6 @@ const CreateTestModal = () => {
       backgroundColor: "#00690B",
     },
   };
-
   const headerText = {
     fontWeight: "bold",
   };
@@ -102,13 +112,28 @@ const CreateTestModal = () => {
         <Box sx={style}>
           <div className={Styles.modalHeader}>
             <div>
-              <Typography>Create a new test</Typography>
+              <Typography sx={{ fontWeight: "bold" }}>
+                Create a new test
+              </Typography>
             </div>
             <div className={Styles.closeBtn}>
               <CloseIcon onClick={handleClose} />
             </div>
           </div>
           <Divider />
+          {/* <div>
+            {step == 0 ? (
+              <AndroidStepOne />
+            ) : step == 1 ? (
+              <AndroidStepTwo />
+            ) : step == 2 ? (
+              <AndroidStepThree />
+            ) : step == 3 ? (
+              <AndroidStepThree />
+            ) : (
+              step == 4 && <AndroidStepFour />
+            )}
+          </div> */}
           <div className={Styles.modalContents}>
             <div>
               <div className={Styles.progressBarPosition}>
@@ -123,31 +148,15 @@ const CreateTestModal = () => {
                 </Typography>
               </div>
               <div>
-                <Grid container spacing={2}>
-                  {dSelectAndLink.map((contents, index) => {
-                    const { name, img, link } = contents;
-                    return (
-                      <React.Fragment key={index}>
-                        <Grid item xs={6} sm={3} sx={iGridStyle}>
-                          <Avatar variant="square" sx={avatarStyle}>
-                            <Image src={img} alt={name} />
-                          </Avatar>
-                          <Typography sx={modalImageLabelStyle}>
-                            {name}
-                          </Typography>
-                        </Grid>
-                      </React.Fragment>
-                    );
-                  })}
-                </Grid>
+                <ChooseOs />
               </div>
             </div>
           </div>
-          <div className={Styles.mNavBtns}>
-            <div>
+          <div className={Styles.mNavBtns} id="mNavBtns">
+            <div onClick={handleBackButton}>
               <GrayBtn>Back</GrayBtn>
             </div>
-            <div>
+            <div onClick={handleNextButton}>
               <GreenBtn>Next</GreenBtn>
             </div>
           </div>

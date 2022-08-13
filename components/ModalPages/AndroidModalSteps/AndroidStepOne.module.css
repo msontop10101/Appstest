@@ -1,12 +1,3 @@
-.modalHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-.closeBtn {
-    cursor: pointer;
-}
 .modalContents {
     margin: 15px 0px 10px 0px;
     display: flex;
@@ -27,9 +18,4 @@
 .dSelectStyle {
     display: flex;
     flex-direction: column
-}
-.mNavBtns {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0px 10px 0px
 }
