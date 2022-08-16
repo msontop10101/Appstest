@@ -13,10 +13,10 @@ import Image from "next/image";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import { dSelectAndLink } from "../../files/data";
 import ChooseOs from "../ModalPages/ChooseOs";
-import AndroidStepOne from "../ModalPages/AndroidModalSteps/AndroidStepOne";
-import AndroidStepTwo from "../ModalPages/AndroidModalSteps/AndroidStepTwo";
-import AndroidStepThree from "../ModalPages/AndroidModalSteps/AndroidStepThree";
-import AndroidStepFour from "../ModalPages/AndroidModalSteps/AndroidStepFour";
+// import AndroidStepOne from "../ModalPages/AndroidModalSteps/AndroidStepOne";
+// import AndroidStepTwo from "../ModalPages/AndroidModalSteps/AndroidStepTwo";
+// import AndroidStepThree from "../ModalPages/AndroidModalSteps/AndroidStepThree";
+// import AndroidStepFour from "../ModalPages/AndroidModalSteps/AndroidStepFour";
 
 const style = {
   position: "absolute" as "absolute",
