@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Grid, Avatar } from "@mui/material";
+import { Typography, Grid } from "@mui/material";
 import Image from "next/image";
 import { dSelectAndLink } from "../../files/data";
 import Styles from "./ChooseOs.module.css";
 
-const ChooseOs = () => {
+const ChooseOs = (props: any) => {
   const [selected, setSelected] = useState<string>("");
   const [indi, setIndi] = useState<number>(0);
 
   const handleSelect = (index: number, name: string) => {
     setIndi(index);
     setSelected(name);
+    props.onSelect(name);
   };
 
   useEffect(() => {
@@ -35,29 +36,25 @@ const ChooseOs = () => {
     },
     flexDirection: "column",
     alignItems: "center",
+    cursor: "pointer",
+  };
+  const headerText = {
+    fontWeight: "bold",
+  };
+  const subHeaderText = {
+    fontSize: "14px",
   };
 
   return (
     <>
-      {/* <Grid container spacing={2}>
-        {dSelectAndLink.map((contents, index) => {
-          const { name, img, link } = contents;
-          return (
-            <Grid item xs={6} sm={3} key={index}>
-              <Avatar
-                variant="square"
-                sx={avatarStyle}
-                id="os"
-                onClick={() => handleSelect(index, name)}
-              >
-                <Image src={img} alt={name} />
-              </Avatar>
-              <Typography sx={labelFont}>{name}</Typography>
-            </Grid>
-          );
-        })}
-      </Grid> */}
-
+      <div className={Styles.pageText}>
+        <Typography sx={headerText}>
+          Select platform and test application
+        </Typography>
+        <Typography sx={subHeaderText} color="text.secondary">
+          Please choose the device platform you&apos;ll be testing on
+        </Typography>
+      </div>
       <Grid container spacing={2}>
         {dSelectAndLink.map((contents, index) => {
           const { name, img, link } = contents;
@@ -65,7 +62,9 @@ const ChooseOs = () => {
             <Grid item xs={6} sm={3} key={index} sx={gridStyle}>
               <div
                 id="os"
-                onClick={() => handleSelect(index, name)}
+                onClick={() => {
+                  handleSelect(index, name);
+                }}
                 className={Styles.os}
               >
                 <Image src={img} alt={name} />
@@ -75,6 +74,14 @@ const ChooseOs = () => {
           );
         })}
       </Grid>
+      {/* <div className={Styles.mNavBtns} id="mNavBtns">
+        <div>
+          <GrayBtn>Back</GrayBtn>
+        </div>
+        <div>
+          <GreenBtn>Next</GreenBtn>
+        </div>
+      </div> */}
     </>
   );
 };

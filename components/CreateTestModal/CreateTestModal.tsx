@@ -8,15 +8,11 @@ import Divider from "@mui/material/Divider";
 import Styles from "./CreateTestModal.module.css";
 import GrayBtn from "../General/GrayBtn";
 import GreenBtn from "../General/GreenBtn";
-import { Grid, Avatar } from "@mui/material";
-import Image from "next/image";
 import ProgressBar from "../ProgressBar/ProgressBar";
-import { dSelectAndLink } from "../../files/data";
 import ChooseOs from "../ModalPages/ChooseOs";
-// import AndroidStepOne from "../ModalPages/AndroidModalSteps/AndroidStepOne";
-// import AndroidStepTwo from "../ModalPages/AndroidModalSteps/AndroidStepTwo";
-// import AndroidStepThree from "../ModalPages/AndroidModalSteps/AndroidStepThree";
-// import AndroidStepFour from "../ModalPages/AndroidModalSteps/AndroidStepFour";
+import StepTwo from "../ModalPages/StepTwo";
+import AndroidStepOne from "../ModalPages/Android/AndroidStepOne";
+// import AndroidStepTwo from "../ModalPages/Android/AndroidStepTwo";
 
 const style = {
   position: "absolute" as "absolute",
@@ -36,6 +32,7 @@ const style = {
 const CreateTestModal = () => {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(0);
+  const [nav, setNav] = useState("");
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const handleBackButton = () => {
@@ -43,9 +40,12 @@ const CreateTestModal = () => {
   };
   const handleNextButton = () => {
     step < 4 && setStep(step + 1);
+    console.log(step);
   };
-
-  useEffect(() => {}, []);
+  const getSelected = (select: string) => {
+    setNav(select);
+    console.log(nav);
+  };
 
   const buttonStyles = {
     fontSize: "1.2rem",
@@ -58,31 +58,6 @@ const CreateTestModal = () => {
     "&:hover": {
       backgroundColor: "#00690B",
     },
-  };
-  const headerText = {
-    fontWeight: "bold",
-  };
-  const subHeaderText = {
-    fontSize: "14px",
-  };
-  const avatarStyle = {
-    bgcolor: "#EEEEEE",
-    borderRadius: "5px",
-    width: "100px",
-    height: "100px",
-    cursor: "pointer",
-    "&:hover": {
-      backgroundColor: "#00690B",
-    },
-  };
-  const modalImageLabelStyle = {
-    fontSize: "14px",
-    marginTop: "10px",
-  };
-  const iGridStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
   };
 
   return (
@@ -121,34 +96,18 @@ const CreateTestModal = () => {
             </div>
           </div>
           <Divider />
-          {/* <div>
-            {step == 0 ? (
-              <AndroidStepOne />
-            ) : step == 1 ? (
-              <AndroidStepTwo />
-            ) : step == 2 ? (
-              <AndroidStepThree />
-            ) : step == 3 ? (
-              <AndroidStepThree />
-            ) : (
-              step == 4 && <AndroidStepFour />
-            )}
-          </div> */}
+
           <div className={Styles.modalContents}>
             <div>
               <div className={Styles.progressBarPosition}>
                 <ProgressBar />
               </div>
-              <div className={Styles.pageText}>
-                <Typography sx={headerText}>
-                  Select platform and test application
-                </Typography>
-                <Typography sx={subHeaderText} color="text.secondary">
-                  Please choose the device platform you&apos;ll be testing on
-                </Typography>
-              </div>
               <div>
-                <ChooseOs />
+                {step == 0 ? (
+                  <ChooseOs onSelect={getSelected} />
+                ) : step > 0 && nav == "Android" ? (
+                  <AndroidStepOne />
+                ) : null}
               </div>
             </div>
           </div>
