@@ -19,9 +19,9 @@ const ChooseOs = () => {
     for (let i = indi + 1; i < 4; i++) {
       osAll[i].style.backgroundColor = "#EEEEEE";
     }
-    // for (let j = indi; j < indi; j--) {
-    //   console.log(j);
-    // }
+    for (let j = indi - 1; j >= 0; j--) {
+      osAll[j].style.backgroundColor = "#EEEEEE";
+    }
     // switch (indi) {
     //   case 0:
     //     osAll[1].style.backgroundColor = "#EEEEEE";
