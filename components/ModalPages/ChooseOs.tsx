@@ -5,16 +5,16 @@ import { dSelectAndLink } from "../../files/data";
 import Styles from "./ChooseOs.module.css";
 
 const ChooseOs = () => {
-  const [selected, setSelected] = useState(name);
-  const [indi, setIndi] = useState(0);
+  const [selected, setSelected] = useState<string>("");
+  const [indi, setIndi] = useState<number>(0);
 
-  const handleSelect = (event: any, index: any) => {
+  const handleSelect = (index: number, name: string) => {
     setIndi(index);
+    setSelected(name);
   };
 
   useEffect(() => {
-    const os = document.querySelector<HTMLElement>("#os")!;
-    const osAll = document.querySelectorAll("#os");
+    const osAll = document.querySelectorAll<HTMLElement>("#os");
     osAll[indi].style.backgroundColor = "green";
     for (let i = indi + 1; i < 4; i++) {
       osAll[i].style.backgroundColor = "#EEEEEE";
@@ -22,49 +22,24 @@ const ChooseOs = () => {
     for (let j = indi - 1; j >= 0; j--) {
       osAll[j].style.backgroundColor = "#EEEEEE";
     }
-    // switch (indi) {
-    //   case 0:
-    //     osAll[1].style.backgroundColor = "#EEEEEE";
-    //     osAll[2].style.backgroundColor = "#EEEEEE";
-    //     osAll[3].style.backgroundColor = "#EEEEEE";
-    //     break;
-    //   case 1:
-    //     osAll[0].style.backgroundColor = "#EEEEEE";
-    //     osAll[2].style.backgroundColor = "#EEEEEE";
-    //     osAll[3].style.backgroundColor = "#EEEEEE";
-    //     break;
-    //   case 2:
-    //     osAll[0].style.backgroundColor = "#EEEEEE";
-    //     osAll[1].style.backgroundColor = "#EEEEEE";
-    //     osAll[3].style.backgroundColor = "#EEEEEE";
-    //     break;
-    //   case 3:
-    //     osAll[0].style.backgroundColor = "#EEEEEE";
-    //     osAll[1].style.backgroundColor = "#EEEEEE";
-    //     osAll[2].style.backgroundColor = "#EEEEEE";
-    //     break;
-    // }
   }, [indi]);
-
-  const avatarStyle = {
-    width: "100px",
-    height: "100px",
-    borderRadius: "5px",
-    cursor: "pointer",
-    backgroundColor: "#EEEEEE",
-    "&:hover": {
-      backgroundColor: "green",
-    },
-  };
 
   const labelFont = {
     fontSize: "14px",
     marginTop: "10px",
   };
+  const gridStyle = {
+    display: {
+      xs: "flex",
+      sm: "block",
+    },
+    flexDirection: "column",
+    alignItems: "center",
+  };
 
   return (
     <>
-      <Grid container spacing={2} id="osContianer">
+      {/* <Grid container spacing={2}>
         {dSelectAndLink.map((contents, index) => {
           const { name, img, link } = contents;
           return (
@@ -73,10 +48,28 @@ const ChooseOs = () => {
                 variant="square"
                 sx={avatarStyle}
                 id="os"
-                onClick={(event) => handleSelect(event, index)}
+                onClick={() => handleSelect(index, name)}
               >
                 <Image src={img} alt={name} />
               </Avatar>
+              <Typography sx={labelFont}>{name}</Typography>
+            </Grid>
+          );
+        })}
+      </Grid> */}
+
+      <Grid container spacing={2}>
+        {dSelectAndLink.map((contents, index) => {
+          const { name, img, link } = contents;
+          return (
+            <Grid item xs={6} sm={3} key={index} sx={gridStyle}>
+              <div
+                id="os"
+                onClick={() => handleSelect(index, name)}
+                className={Styles.os}
+              >
+                <Image src={img} alt={name} />
+              </div>
               <Typography sx={labelFont}>{name}</Typography>
             </Grid>
           );
