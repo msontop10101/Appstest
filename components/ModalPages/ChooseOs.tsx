@@ -5,7 +5,7 @@ import { dSelectAndLink } from "../../files/data";
 import Styles from "./ChooseOs.module.css";
 
 const ChooseOs = (props: any) => {
-  const [selected, setSelected] = useState<string>("");
+  const [selected, setSelected] = useState<string>("Android");
   const [indi, setIndi] = useState<number>(0);
 
   const handleSelect = (index: number, name: string) => {
@@ -74,14 +74,6 @@ const ChooseOs = (props: any) => {
           );
         })}
       </Grid>
-      {/* <div className={Styles.mNavBtns} id="mNavBtns">
-        <div>
-          <GrayBtn>Back</GrayBtn>
-        </div>
-        <div>
-          <GreenBtn>Next</GreenBtn>
-        </div>
-      </div> */}
     </>
   );
 };

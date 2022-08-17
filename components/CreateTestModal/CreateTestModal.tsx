@@ -10,9 +10,7 @@ import GrayBtn from "../General/GrayBtn";
 import GreenBtn from "../General/GreenBtn";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import ChooseOs from "../ModalPages/ChooseOs";
-import StepTwo from "../ModalPages/StepTwo";
 import AndroidStepOne from "../ModalPages/Android/AndroidStepOne";
-// import AndroidStepTwo from "../ModalPages/Android/AndroidStepTwo";
 
 const style = {
   position: "absolute" as "absolute",
@@ -33,14 +31,20 @@ const CreateTestModal = () => {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(0);
   const [nav, setNav] = useState("");
+  const [move, setMove] = useState(25);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const handleBackButton = () => {
     step > 0 && setStep(step - 1);
+    step > 0 && setMove((prevState) => prevState - 25);
+    console.log(step);
+    console.log(move);
   };
   const handleNextButton = () => {
-    step < 4 && setStep(step + 1);
+    step < 3 && setStep(step + 1);
+    step < 3 && setMove((prevState) => prevState + 25);
     console.log(step);
+    console.log(move);
   };
   const getSelected = (select: string) => {
     setNav(select);
@@ -100,13 +104,19 @@ const CreateTestModal = () => {
           <div className={Styles.modalContents}>
             <div>
               <div className={Styles.progressBarPosition}>
-                <ProgressBar />
+                <ProgressBar move={move} step={step} />
               </div>
               <div>
                 {step == 0 ? (
                   <ChooseOs onSelect={getSelected} />
                 ) : step > 0 && nav == "Android" ? (
-                  <AndroidStepOne />
+                  <AndroidStepOne nav={nav} />
+                ) : step > 0 && nav == "IOS" ? (
+                  <AndroidStepOne nav={nav} />
+                ) : step > 0 && nav == "Web" ? (
+                  <AndroidStepOne nav={nav} />
+                ) : step > 0 && nav == "API" ? (
+                  <AndroidStepOne nav={nav} />
                 ) : null}
               </div>
             </div>

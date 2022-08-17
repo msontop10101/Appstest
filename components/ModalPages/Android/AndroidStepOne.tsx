@@ -4,7 +4,7 @@ import Styles from "./AndroidStepOne.module.css";
 import ChooseOs from "../ChooseOs";
 import StepTwo from "../StepTwo";
 
-const AndroidStepOne = () => {
+const AndroidStepOne = (props: any) => {
   const headerText = {
     fontWeight: "bold",
   };
@@ -14,11 +14,18 @@ const AndroidStepOne = () => {
   return (
     <>
       <div className={Styles.pageText}>
-        <Typography sx={headerText}>
-          Select platform and test application
-        </Typography>
+        {props.nav == "Android" ? (
+          <Typography sx={headerText}>Android Application Details</Typography>
+        ) : props.nav == "IOS" ? (
+          <Typography sx={headerText}>IOS Application Details</Typography>
+        ) : props.nav == "Web" ? (
+          <Typography sx={headerText}>Web Application Details</Typography>
+        ) : props.nav == "API" ? (
+          <Typography sx={headerText}>API Application Details</Typography>
+        ) : null}
         <Typography sx={subHeaderText} color="text.secondary">
-          Please choose the device platform you&apos;ll be testing on
+          Provide your test with a meaningful name and detail to help your
+          colleges understand the purpose of the test
         </Typography>
       </div>
       <div>

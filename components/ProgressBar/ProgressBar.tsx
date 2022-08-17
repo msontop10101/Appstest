@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import LinearProgress, {
   LinearProgressProps,
 } from "@mui/material/LinearProgress";
@@ -23,7 +23,7 @@ function LinearProgressWithLabel(
   );
 }
 
-const ProgressBar = () => {
+const ProgressBar = (props: any) => {
   const progressBarStyle = {
     height: "10px",
     borderRadius: "5px",
@@ -32,13 +32,13 @@ const ProgressBar = () => {
     marginTop: "10px",
     fontSize: "14px",
   };
-  const [progress, setProgress] = React.useState(25);
+  // const [progress, setProgress] = useState(25);
 
   return (
     <Box sx={{ width: "40%" }}>
-      <LinearProgressWithLabel sx={progressBarStyle} value={progress} />
+      <LinearProgressWithLabel sx={progressBarStyle} value={props.move} />
       <Typography sx={progressLabelStyle} color="text.secondary">
-        1 of 4 complete
+        {props.step + 1} of 4 complete
       </Typography>
     </Box>
   );
