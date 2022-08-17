@@ -11,6 +11,7 @@ import GreenBtn from "../General/GreenBtn";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import ChooseOs from "../ModalPages/ChooseOs";
 import AndroidStepOne from "../ModalPages/Android/AndroidStepOne";
+import OsStepThree from "../ModalPages/OsStepThree";
 
 const style = {
   position: "absolute" as "absolute",
@@ -30,7 +31,7 @@ const style = {
 const CreateTestModal = () => {
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(0);
-  const [nav, setNav] = useState("");
+  const [nav, setNav] = useState("Android");
   const [move, setMove] = useState(25);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -107,16 +108,25 @@ const CreateTestModal = () => {
                 <ProgressBar move={move} step={step} />
               </div>
               <div>
+                {/* {step == 0 ? (
+                  <ChooseOs onSelect={getSelected} />
+                ) : step == 1 && nav == "Android" ? (
+                  <AndroidStepOne nav={nav} />
+                ) : step == 1 && nav == "IOS" ? (
+                  <AndroidStepOne nav={nav} />
+                ) : step == 1 && nav == "Web" ? (
+                  <AndroidStepOne nav={nav} />
+                ) : step == 1 && nav == "API" ? (
+                  <AndroidStepOne nav={nav} />
+                ) : step == 2 && nav == "Android" ? (
+                  <OsStepThree nav={nav}/>
+                ) : null} */}
                 {step == 0 ? (
                   <ChooseOs onSelect={getSelected} />
-                ) : step > 0 && nav == "Android" ? (
+                ) : step == 1 ? (
                   <AndroidStepOne nav={nav} />
-                ) : step > 0 && nav == "IOS" ? (
-                  <AndroidStepOne nav={nav} />
-                ) : step > 0 && nav == "Web" ? (
-                  <AndroidStepOne nav={nav} />
-                ) : step > 0 && nav == "API" ? (
-                  <AndroidStepOne nav={nav} />
+                ) : step == 2 ? (
+                  <OsStepThree nav={nav} />
                 ) : null}
               </div>
             </div>

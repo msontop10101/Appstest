@@ -1,9 +1,9 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import Styles from "./AndroidStepOne.module.css";
-import StepTwo from "../StepTwo";
+import Styles from "./Android/AndroidStepOne.module.css";
+import StepThree from "./StepThree";
 
-const AndroidStepOne = (props: any) => {
+const OsStepThree = (props: any) => {
   const headerText = {
     fontWeight: "bold",
   };
@@ -23,15 +23,15 @@ const AndroidStepOne = (props: any) => {
           <Typography sx={headerText}>API Application Details</Typography>
         ) : null}
         <Typography sx={subHeaderText} color="text.secondary">
-          Provide your test with a meaningful name and detail to help your
-          colleges understand the purpose of the test
+          You can now proceed to add the application details by uploading an APK
+          file
         </Typography>
       </div>
       <div>
-        <StepTwo />
+        <StepThree />
       </div>
     </>
   );
 };
 
-export default AndroidStepOne;
+export default OsStepThree;
