@@ -7,10 +7,15 @@ import {
   Box,
 } from "@mui/material";
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
+import AppleIcon from "@mui/icons-material/Apple";
 import AdbOutlinedIcon from "@mui/icons-material/AdbOutlined";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
 import { deviceVersions } from "../../files/data";
 
-const StepThree = () => {
+const StepThree = (props: any) => {
   const [version, setVersion] = useState<number | string>(9.0);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setVersion(event.target.value);
@@ -78,12 +83,29 @@ const StepThree = () => {
           }}
         />
 
-        <Box sx={eleAlign}>
-          <AdbOutlinedIcon color="primary" sx={{ marginRight: "5px" }} />
-          <Typography sx={labelStyle}>
-            Android minimum device version
-          </Typography>
-        </Box>
+        {props.nav == "Andriod" ? (
+          <Box sx={eleAlign}>
+            <AdbOutlinedIcon color="primary" sx={{ marginRight: "5px" }} />
+            <Typography sx={labelStyle}>
+              Android minimum device version
+            </Typography>
+          </Box>
+        ) : props.nav == "IOS" ? (
+          <Box sx={eleAlign}>
+            <AppleIcon sx={{ marginRight: "5px" }} />
+            <Typography sx={labelStyle}>IOS minimum device version</Typography>
+          </Box>
+        ) : props.nav == "Web" ? (
+          <Box sx={eleAlign}>
+            <AppleIcon sx={{ marginRight: "5px" }} />
+            <Typography sx={labelStyle}>Web minimum device version</Typography>
+          </Box>
+        ) : props.nav == "API" ? (
+          <Box sx={eleAlign}>
+            <AppleIcon sx={{ marginRight: "5px" }} />
+            <Typography sx={labelStyle}>API minimum device version</Typography>
+          </Box>
+        ) : null}
         <TextField
           fullWidth
           size="small"
@@ -103,27 +125,19 @@ const StepThree = () => {
           ))}
         </TextField>
 
-        <Box sx={eleAlign}>
-          <Typography sx={labelStyle}>Is System in Production?</Typography>
-        </Box>
-        <TextField
-          fullWidth
-          size="small"
-          variant="outlined"
-          select
-          value={version}
-          onChange={handleChange}
-          SelectProps={{
-            native: true,
-          }}
-          sx={textFieldStyle}
-        >
-          {deviceVersions.map((option, index) => (
-            <option value={option.version} key={index}>
-              {option.version}
-            </option>
-          ))}
-        </TextField>
+        <FormControl sx={{ textAlign: "left", width: "100%" }}>
+          <Box sx={eleAlign}>
+            <Typography sx={labelStyle}>Is System in Production?</Typography>
+          </Box>
+          <RadioGroup
+            row
+            aria-labelledby="demo-row-radio-buttons-group-label"
+            name="row-radio-buttons-group"
+          >
+            <FormControlLabel value="male" control={<Radio />} label="Yes" />
+            <FormControlLabel value="other" control={<Radio />} label="No" />
+          </RadioGroup>
+        </FormControl>
       </div>
     </>
   );

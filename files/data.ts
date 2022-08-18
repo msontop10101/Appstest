@@ -245,7 +245,7 @@ export const dSelectAndLink = [
 
 //DEVICE VERSION 
 export const deviceVersions = [
-    {version: "Lower than 7.0"},
+    {version: 7.0},
     {version: 8.0},
     {version: 9.0},
     {version: 10.0},

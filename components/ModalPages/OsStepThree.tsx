@@ -28,7 +28,7 @@ const OsStepThree = (props: any) => {
         </Typography>
       </div>
       <div>
-        <StepThree />
+        <StepThree nav={props.nav} />
       </div>
     </>
   );

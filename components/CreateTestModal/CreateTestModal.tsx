@@ -12,6 +12,7 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 import ChooseOs from "../ModalPages/ChooseOs";
 import AndroidStepOne from "../ModalPages/Android/AndroidStepOne";
 import OsStepThree from "../ModalPages/OsStepThree";
+import WebStepThree from "../ModalPages/WebStepThree";
 
 const style = {
   position: "absolute" as "absolute",
@@ -127,6 +128,8 @@ const CreateTestModal = () => {
                   <AndroidStepOne nav={nav} />
                 ) : step == 2 ? (
                   <OsStepThree nav={nav} />
+                ) : step == 2 && nav == "Web" ? (
+                  <WebStepThree />
                 ) : null}
               </div>
             </div>

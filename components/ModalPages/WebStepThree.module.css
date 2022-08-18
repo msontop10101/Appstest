@@ -1,0 +1,19 @@
+.inputField {
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.enterNameContainer {
+    margin: 15px 0px 15px 0px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.uploadContainer {
+    border: 2px dashed green;
+    border-radius: 5px;
+    padding: 50px;
+    margin: 10px 0px 10px 0px
+}
