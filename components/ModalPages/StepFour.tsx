@@ -16,7 +16,7 @@ import FormControl from "@mui/material/FormControl";
 import { deviceVersions } from "../../files/data";
 import { navContext } from "../CreateTestModal/CreateTestModal";
 
-const StepThree = (props: any) => {
+const StepFour = (props: any) => {
   const [version, setVersion] = useState<number | string>(9.0);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setVersion(event.target.value);
@@ -145,4 +145,4 @@ const StepThree = (props: any) => {
   );
 };
 
-export default StepThree;
+export default StepFour;

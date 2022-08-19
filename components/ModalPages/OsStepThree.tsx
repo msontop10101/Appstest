@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Typography } from "@mui/material";
 import Styles from "./Android/AndroidStepOne.module.css";
 import StepThree from "./StepThree";
+import WebStepThree from "./WebStepThree";
+import ApiStepThree from "./ApiStepThree";
+import { navContext } from "../CreateTestModal/CreateTestModal";
 
 const OsStepThree = (props: any) => {
   const headerText = {
@@ -10,25 +13,39 @@ const OsStepThree = (props: any) => {
   const subHeaderText = {
     fontSize: "14px",
   };
+  const nav = useContext(navContext);
   return (
     <>
       <div className={Styles.pageText}>
-        {props.nav == "Android" ? (
-          <Typography sx={headerText}>Android Application Details</Typography>
-        ) : props.nav == "IOS" ? (
+        {nav == "IOS" ? (
           <Typography sx={headerText}>IOS Application Details</Typography>
-        ) : props.nav == "Web" ? (
+        ) : nav == "Web" ? (
           <Typography sx={headerText}>Web Application Details</Typography>
-        ) : props.nav == "API" ? (
+        ) : nav == "API" ? (
           <Typography sx={headerText}>API Application Details</Typography>
+        ) : nav == "Android" ? (
+          <Typography sx={headerText}>Android Application Details</Typography>
         ) : null}
-        <Typography sx={subHeaderText} color="text.secondary">
-          You can now proceed to add the application details by uploading an APK
-          file
-        </Typography>
+        {nav == "Web" || nav == "API" ? (
+          <Typography sx={subHeaderText} color="text.secondary">
+            To add a new app to the testing list, simply add it&apos;s details
+            below
+          </Typography>
+        ) : (
+          <Typography sx={subHeaderText} color="text.secondary">
+            You can now proceed to add the application details by uploading an
+            APK file
+          </Typography>
+        )}
       </div>
       <div>
-        <StepThree nav={props.nav} />
+        {nav == "Web" ? (
+          <WebStepThree />
+        ) : nav == "API" ? (
+          <ApiStepThree />
+        ) : (
+          <StepThree />
+        )}
       </div>
     </>
   );

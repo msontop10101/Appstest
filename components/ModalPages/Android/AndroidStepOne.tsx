@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Typography } from "@mui/material";
 import Styles from "./AndroidStepOne.module.css";
 import StepTwo from "../StepTwo";
+import { navContext } from "../../CreateTestModal/CreateTestModal";
 
 const AndroidStepOne = (props: any) => {
   const headerText = {
@@ -10,16 +11,17 @@ const AndroidStepOne = (props: any) => {
   const subHeaderText = {
     fontSize: "14px",
   };
+  const nav = useContext(navContext);
   return (
     <>
       <div className={Styles.pageText}>
-        {props.nav == "Android" ? (
+        {nav == "Android" ? (
           <Typography sx={headerText}>Android Application Details</Typography>
-        ) : props.nav == "IOS" ? (
+        ) : nav == "IOS" ? (
           <Typography sx={headerText}>IOS Application Details</Typography>
-        ) : props.nav == "Web" ? (
+        ) : nav == "Web" ? (
           <Typography sx={headerText}>Web Application Details</Typography>
-        ) : props.nav == "API" ? (
+        ) : nav == "API" ? (
           <Typography sx={headerText}>API Application Details</Typography>
         ) : null}
         <Typography sx={subHeaderText} color="text.secondary">

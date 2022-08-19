@@ -28,6 +28,7 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+export const navContext = React.createContext("");
 
 const CreateTestModal = () => {
   const [open, setOpen] = useState(false);
@@ -109,27 +110,16 @@ const CreateTestModal = () => {
                 <ProgressBar move={move} step={step} />
               </div>
               <div>
-                {/* {step == 0 ? (
-                  <ChooseOs onSelect={getSelected} />
-                ) : step == 1 && nav == "Android" ? (
-                  <AndroidStepOne nav={nav} />
-                ) : step == 1 && nav == "IOS" ? (
-                  <AndroidStepOne nav={nav} />
-                ) : step == 1 && nav == "Web" ? (
-                  <AndroidStepOne nav={nav} />
-                ) : step == 1 && nav == "API" ? (
-                  <AndroidStepOne nav={nav} />
-                ) : step == 2 && nav == "Android" ? (
-                  <OsStepThree nav={nav}/>
-                ) : null} */}
                 {step == 0 ? (
                   <ChooseOs onSelect={getSelected} />
                 ) : step == 1 ? (
-                  <AndroidStepOne nav={nav} />
+                  <navContext.Provider value={nav}>
+                    <AndroidStepOne />
+                  </navContext.Provider>
                 ) : step == 2 ? (
-                  <OsStepThree nav={nav} />
-                ) : step == 2 && nav == "Web" ? (
-                  <WebStepThree />
+                  <navContext.Provider value={nav}>
+                    <OsStepThree />
+                  </navContext.Provider>
                 ) : null}
               </div>
             </div>

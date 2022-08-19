@@ -6,6 +6,7 @@ import {
   Typography,
   Box,
 } from "@mui/material";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
 import AppleIcon from "@mui/icons-material/Apple";
 import AdbOutlinedIcon from "@mui/icons-material/AdbOutlined";
@@ -16,7 +17,7 @@ import FormControl from "@mui/material/FormControl";
 import { deviceVersions } from "../../files/data";
 import { navContext } from "../CreateTestModal/CreateTestModal";
 
-const WebStepThree = (props: any) => {
+const ApiStepThree = (props: any) => {
   const [version, setVersion] = useState<number | string>();
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setVersion(event.target.value);
@@ -34,21 +35,26 @@ const WebStepThree = (props: any) => {
     },
   };
   const labelStyle = {
-    fontWeight: "bold",
     textAlign: "left",
     margin: "10px 0px 10px 0px",
   };
   const eleAlign = {
     display: "flex",
-    alignItems: "center",
     margin: "10px 0px 5px 0px",
+    alignItems: "center",
+  };
+  const textStyles = {
+    fontSize: "14px",
+    fontWeight: "bold",
   };
   const nav = useContext(navContext);
   return (
     <>
       <div>
         <label>
-          <Typography sx={labelStyle}>URL</Typography>
+          <Typography sx={labelStyle}>
+            Do you have the resource deploy URL?
+          </Typography>
         </label>
         <TextField
           fullWidth
@@ -57,29 +63,12 @@ const WebStepThree = (props: any) => {
           placeholder="https://example.appstest/web"
           sx={textFieldStyle}
         />
-
         <Box sx={eleAlign}>
-          <Typography sx={labelStyle}>Browser type</Typography>
+          <Typography color="primary" sx={textStyles}>
+            Available in stores
+          </Typography>
+          <HelpOutlineIcon color="primary" sx={{ marginLeft: "5px" }} />
         </Box>
-        <TextField
-          fullWidth
-          size="small"
-          variant="outlined"
-          select
-          value={version}
-          onChange={handleChange}
-          placeholder="Select browser type"
-          SelectProps={{
-            native: true,
-          }}
-          sx={textFieldStyle}
-        >
-          {deviceVersions.map((option, index) => (
-            <option value={option.version} key={index}>
-              {option.version}
-            </option>
-          ))}
-        </TextField>
 
         <FormControl sx={{ textAlign: "left", width: "100%" }}>
           <Box sx={eleAlign}>
@@ -99,4 +88,4 @@ const WebStepThree = (props: any) => {
   );
 };
 
-export default WebStepThree;
+export default ApiStepThree;
