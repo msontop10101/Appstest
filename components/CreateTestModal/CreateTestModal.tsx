@@ -12,6 +12,7 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 import ChooseOs from "../ModalPages/ChooseOs";
 import AndroidStepOne from "../ModalPages/Android/AndroidStepOne";
 import OsStepThree from "../ModalPages/OsStepThree";
+import StepFour from "../ModalPages/StepFour";
 import WebStepThree from "../ModalPages/WebStepThree";
 
 const style = {
@@ -120,6 +121,10 @@ const CreateTestModal = () => {
                   <navContext.Provider value={nav}>
                     <OsStepThree />
                   </navContext.Provider>
+                ) : step == 3 ? (
+                  <navContext.Provider value={nav}>
+                    <StepFour />
+                  </navContext.Provider>
                 ) : null}
               </div>
             </div>
@@ -128,9 +133,15 @@ const CreateTestModal = () => {
             <div onClick={handleBackButton}>
               <GrayBtn>Back</GrayBtn>
             </div>
-            <div onClick={handleNextButton}>
-              <GreenBtn>Next</GreenBtn>
-            </div>
+            {step == 3 ? (
+              <div onClick={handleNextButton}>
+                <GreenBtn>Submit</GreenBtn>
+              </div>
+            ) : (
+              <div onClick={handleNextButton}>
+                <GreenBtn>Next</GreenBtn>
+              </div>
+            )}
           </div>
         </Box>
       </Modal>

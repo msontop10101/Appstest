@@ -5,21 +5,21 @@ import {
   Button,
   Typography,
   Box,
+  Grid,
 } from "@mui/material";
-import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
-import AppleIcon from "@mui/icons-material/Apple";
-import AdbOutlinedIcon from "@mui/icons-material/AdbOutlined";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
+import Styles from "./StepFour.module.css";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import { deviceVersions } from "../../files/data";
+import Checkbox from "@mui/material/Checkbox";
+import FormGroup from "@mui/material/FormGroup";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { navContext } from "../CreateTestModal/CreateTestModal";
 
-const StepFour = (props: any) => {
-  const [version, setVersion] = useState<number | string>(9.0);
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setVersion(event.target.value);
+const StepFour = () => {
+  const label = {
+    marginBottom: "5px",
+    marginTop: "15px",
+    fontWeight: "bold",
+    textAlign: "left",
   };
   const inviteBtn = {
     fontSize: "1.2rem",
@@ -31,6 +31,10 @@ const StepFour = (props: any) => {
   const textFieldStyle = {
     ".MuiOutlinedInput-root": {
       paddingRight: "0px",
+    },
+    "& .MuiInputBase-root": {
+      border: "1px solid gray",
+      borderRadius: "0px 5px 5px 0px",
     },
   };
   const labelStyle = {
@@ -46,101 +50,111 @@ const StepFour = (props: any) => {
   const nav = useContext(navContext);
   return (
     <>
-      <div>
-        <label>
-          <Typography sx={labelStyle}>Upload File</Typography>
-        </label>
-        <TextField
-          fullWidth
-          size="small"
-          variant="outlined"
-          placeholder="Upload your app file (e.g APK file)"
-          sx={textFieldStyle}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <Button
-                  color="primary"
-                  size="small"
-                  variant="contained"
-                  sx={inviteBtn}
-                  fullWidth={true}
-                >
-                  <Typography>
-                    <Box
-                      sx={{
-                        textTransform: "capitalize",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <CloudDownloadOutlinedIcon sx={{ marginRight: "5px" }} />
-                      Upload
-                    </Box>
-                  </Typography>
-                </Button>
-              </InputAdornment>
-            ),
-          }}
+      <div className={Styles.enterNameContainer}>
+        <Typography sx={label}>Test Credential</Typography>
+        <input
+          placeholder="Provide test credentials"
+          className={Styles.inputField}
         />
-
-        {nav == "IOS" ? (
-          <Box sx={eleAlign}>
-            <AppleIcon sx={{ marginRight: "5px" }} />
-            <Typography sx={labelStyle}>IOS minimum device version</Typography>
-          </Box>
-        ) : nav == "Web" ? (
-          <Box sx={eleAlign}>
-            <AppleIcon sx={{ marginRight: "5px" }} />
-            <Typography sx={labelStyle}>Web minimum device version</Typography>
-          </Box>
-        ) : nav == "API" ? (
-          <Box sx={eleAlign}>
-            <AppleIcon sx={{ marginRight: "5px" }} />
-            <Typography sx={labelStyle}>API minimum device version</Typography>
-          </Box>
-        ) : nav == "Android" ? (
-          <Box sx={eleAlign}>
-            <AdbOutlinedIcon sx={{ marginRight: "5px" }} />
-            <Typography sx={labelStyle}>
-              Android minimum device version
-            </Typography>
-          </Box>
-        ) : null}
-        <TextField
-          fullWidth
-          size="small"
-          variant="outlined"
-          select
-          value={version}
-          onChange={handleChange}
-          SelectProps={{
-            native: true,
-          }}
-          sx={textFieldStyle}
-        >
-          {deviceVersions.map((option, index) => (
-            <option value={option.version} key={index}>
-              {option.version}
-            </option>
-          ))}
-        </TextField>
-
-        <FormControl sx={{ textAlign: "left", width: "100%" }}>
-          <Box sx={eleAlign}>
-            <Typography sx={labelStyle}>Is System in Production?</Typography>
-          </Box>
-          <RadioGroup
-            row
-            aria-labelledby="demo-row-radio-buttons-group-label"
-            name="row-radio-buttons-group"
-          >
-            <FormControlLabel value="male" control={<Radio />} label="Yes" />
-            <FormControlLabel value="other" control={<Radio />} label="No" />
-          </RadioGroup>
-        </FormControl>
       </div>
+      <Typography sx={label}>
+        Where do you want to get your notification update?
+      </Typography>
+      <FormGroup aria-label="position" row>
+        <FormControlLabel
+          value="end"
+          control={<Checkbox />}
+          label="Slack"
+          labelPlacement="end"
+        />
+        <FormControlLabel
+          value="end"
+          control={<Checkbox />}
+          label="Jira"
+          labelPlacement="end"
+        />
+      </FormGroup>
+      <Typography sx={label}>Invite your team</Typography>
+      <Grid container>
+        <Grid item xs={7}>
+          <TextField
+            sx={{
+              "& .MuiInputBase-root": {
+                border: "1px solid gray",
+                borderRadius: "5px 0px 0px 5px",
+              },
+            }}
+            fullWidth
+            id="outlined-basic"
+            size="small"
+            variant="outlined"
+            placeholder="Invite your team (Multiple lines and comma)"
+          />
+        </Grid>
+        <Grid item xs={5}>
+          <TextField
+            sx={textFieldStyle}
+            fullWidth
+            id="outlined-basic"
+            size="small"
+            variant="outlined"
+            placeholder="Member"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <Button
+                    color="primary"
+                    size="small"
+                    variant="contained"
+                    sx={inviteBtn}
+                    fullWidth={true}
+                  >
+                    <Typography>
+                      <Box
+                        sx={{
+                          textTransform: "capitalize",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          padding: "2px",
+                        }}
+                      >
+                        Invite
+                      </Box>
+                    </Typography>
+                  </Button>
+                </InputAdornment>
+              ),
+            }}
+          />
+        </Grid>
+      </Grid>
+
+      <Grid container>
+        <Typography sx={label}>Schedule Test</Typography>
+        <Grid item xs={10}>
+          <TextField
+            sx={{
+              "& .MuiInputBase-root": {
+                border: "1px solid gray",
+                borderRadius: "5px 0px 0px 5px",
+              },
+            }}
+            fullWidth
+            id="outlined-basic"
+            size="small"
+            variant="outlined"
+            placeholder="dd/mm/yyyy"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <CalendarMonthIcon color="primary" />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </Grid>
+      </Grid>
     </>
   );
 };
