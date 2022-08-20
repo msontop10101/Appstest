@@ -5,6 +5,7 @@ import {
   Button,
   Typography,
   Box,
+  Grid,
 } from "@mui/material";
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
 import AppleIcon from "@mui/icons-material/Apple";
@@ -27,6 +28,21 @@ const StepThree = (props: any) => {
       sm: 100,
     },
     padding: 0.8,
+    display: {
+      xs: "none",
+      sm: "block",
+    },
+  };
+  const inviteBtn2 = {
+    fontSize: "1.2rem",
+    minWidth: {
+      sm: 100,
+    },
+    padding: 0.8,
+    display: {
+      xs: "block",
+      sm: "none",
+    },
   };
   const textFieldStyle = {
     ".MuiOutlinedInput-root": {
@@ -84,6 +100,31 @@ const StepThree = (props: any) => {
             ),
           }}
         />
+        <Grid container>
+          <Grid item xs={3} mt={1}>
+            <Button
+              color="primary"
+              size="small"
+              variant="contained"
+              sx={inviteBtn2}
+              fullWidth={true}
+            >
+              <Typography>
+                <Box
+                  sx={{
+                    textTransform: "capitalize",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "2px",
+                  }}
+                >
+                  Upload
+                </Box>
+              </Typography>
+            </Button>
+          </Grid>
+        </Grid>
 
         {nav == "IOS" ? (
           <Box sx={eleAlign}>
@@ -102,7 +143,7 @@ const StepThree = (props: any) => {
           </Box>
         ) : nav == "Android" ? (
           <Box sx={eleAlign}>
-            <AdbOutlinedIcon sx={{ marginRight: "5px" }} />
+            <AdbOutlinedIcon sx={{ marginRight: "5px" }} color="primary" />
             <Typography sx={labelStyle}>
               Android minimum device version
             </Typography>

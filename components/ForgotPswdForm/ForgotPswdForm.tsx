@@ -39,7 +39,10 @@ function ForgotPswdForm() {
   };
   const headerMsg = {
     fontSize: 12,
-    color: "rgba(0, 0, 0, 0.7)",
+    color: {
+      xs: "white",
+      sm: "rgba(0, 0, 0, 0.7)",
+    },
   };
   const textLogo = {
     color: "#00690B",
@@ -64,7 +67,10 @@ function ForgotPswdForm() {
   };
   const backLink = {
     fontSize: 14,
-    color: "#00690B",
+    color: {
+      xs: "white",
+      sm: "#00690B",
+    },
     cursor: "pointer",
   };
   return (

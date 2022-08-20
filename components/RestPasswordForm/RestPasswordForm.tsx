@@ -88,6 +88,12 @@ function ResetPasswordFrom() {
     fontSize: 14,
     cursor: "pointer",
   };
+  const keyBackStyle = {
+    display: {
+      xs: "none",
+      sm: "block",
+    },
+  };
   return (
     <>
       <div className={Styles.container}>
@@ -98,7 +104,7 @@ function ResetPasswordFrom() {
                 <div>
                   <Link href="/">
                     <a>
-                      <KeyboardBackspaceIcon />
+                      <KeyboardBackspaceIcon sx={keyBackStyle} />
                     </a>
                   </Link>
                 </div>

@@ -27,6 +27,21 @@ const StepFour = () => {
       sm: 100,
     },
     padding: 0.8,
+    display: {
+      xs: "none",
+      sm: "block",
+    },
+  };
+  const inviteBtn2 = {
+    fontSize: "1.2rem",
+    minWidth: {
+      sm: 100,
+    },
+    padding: 0.8,
+    display: {
+      xs: "block",
+      sm: "none",
+    },
   };
   const textFieldStyle = {
     ".MuiOutlinedInput-root": {
@@ -115,7 +130,7 @@ const StepFour = () => {
                           textTransform: "capitalize",
                           display: "flex",
                           alignItems: "center",
-                          justifyContent: "space-between",
+                          justifyContent: "center",
                           padding: "2px",
                         }}
                       >
@@ -128,6 +143,29 @@ const StepFour = () => {
             }}
           />
         </Grid>
+        <Grid item xs={3} mt={1}>
+          <Button
+            color="primary"
+            size="small"
+            variant="contained"
+            sx={inviteBtn2}
+            fullWidth={true}
+          >
+            <Typography>
+              <Box
+                sx={{
+                  textTransform: "capitalize",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "2px",
+                }}
+              >
+                Invite
+              </Box>
+            </Typography>
+          </Button>
+        </Grid>
       </Grid>
 
       <Grid container>
@@ -137,7 +175,6 @@ const StepFour = () => {
             sx={{
               "& .MuiInputBase-root": {
                 border: "1px solid gray",
-                borderRadius: "5px 0px 0px 5px",
               },
             }}
             fullWidth

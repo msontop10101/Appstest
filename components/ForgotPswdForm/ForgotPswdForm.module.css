@@ -31,3 +31,15 @@
     justify-content: space-between;
     align-items: center;
 }
+@media screen and (max-width: 600px) {
+    .container {
+        background-color: #00690B;
+        border-radius: 5px;
+        width: 100%;
+        color: white;
+        margin: 20px 0px 20px 0px
+    }
+    .containerContent {
+        height: 50vh;
+    }
+}
