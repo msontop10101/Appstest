@@ -151,19 +151,23 @@ export const DImages = [dLogo]
 export const DashNavElements = [
     {
         icon: icon1,
-        name: "Dashboard"
+        name: "Dashboard",
+        link: "#"
     },
     {
         icon: icon2,
-        name: "Tests"
+        name: "Tests",
+        link: "../../Test"
     },
     {
         icon: icon3,
-        name: "Teams"
+        name: "Teams",
+        link: "#"
     },
     {
         icon: icon4,
-        name: "Report"
+        name: "Report",
+        link: "#"
     },
 ]
 

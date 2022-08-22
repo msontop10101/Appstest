@@ -21,6 +21,7 @@ import Styles from "./DashDrawer.module.css";
 import Image from "next/image";
 import { DImages, DashNavElements, appbarIcons } from "../../files/data";
 import DashContent from "../DashContent/DashContent";
+import Link from "next/link"
 
 const drawerWidth = 240;
 
@@ -102,11 +103,14 @@ const DashDrawer = () => {
       )}
       <List>
         {DashNavElements.map((elements, index) => {
-          const { icon, name } = elements;
+          const { icon, name, link } = elements;
           return (
             <ListItem key={index}>
               <ListItemButton>
-                <ListItemIcon sx={iconStyle}>
+                <Link href={link}>
+                  <div>
+                    <a>
+                    <ListItemIcon sx={iconStyle}> 
                   <Image src={icon} alt="icons" />
                 </ListItemIcon>
                 <div className={Styles.listText}>
@@ -115,6 +119,9 @@ const DashDrawer = () => {
                 <div className={Styles.listTextDisplay}>
                   <ListItemText primary={name} />
                 </div>
+                    </a>
+                  </div>
+                </Link>
               </ListItemButton>
             </ListItem>
           );
