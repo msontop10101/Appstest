@@ -1,11 +1,12 @@
 import React from "react";
-import DashDrawer from "../DashDrawer/DashDrawer";
+// import DashDrawer from "../DashDrawer/DashDrawer";
+import DrawerComp from "../DrawerComp/DrawerComp";
 
 function DashboardComp() {
   return (
     <>
       <div>
-        <DashDrawer />
+        <DrawerComp />
       </div>
     </>
   );

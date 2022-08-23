@@ -23,9 +23,13 @@ import { DImages, DashNavElements, appbarIcons } from "../../files/data";
 import DashContent from "../DashContent/DashContent";
 import Link from "next/link"
 
+type Props = {
+  children: JSX.Element
+}
+
 const drawerWidth = 240;
 
-const DashDrawer = () => {
+const DashDrawer: React.FC<Props> = ({children}) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [miniOpen, setMiniOpen] = useState(false);
   const [fullOpen, setFullOpen] = useState(false);
@@ -108,9 +112,8 @@ const DashDrawer = () => {
             <ListItem key={index}>
               <ListItemButton>
                 <Link href={link}>
-                  <div>
-                    <a>
-                    <ListItemIcon sx={iconStyle}> 
+                <a>
+                <ListItemIcon sx={iconStyle}> 
                   <Image src={icon} alt="icons" />
                 </ListItemIcon>
                 <div className={Styles.listText}>
@@ -119,8 +122,7 @@ const DashDrawer = () => {
                 <div className={Styles.listTextDisplay}>
                   <ListItemText primary={name} />
                 </div>
-                    </a>
-                  </div>
+                </a>
                 </Link>
               </ListItemButton>
             </ListItem>
@@ -229,12 +231,8 @@ const DashDrawer = () => {
           </Avatar>
         </IconButton>
         <div className={Styles.firstSide}>
-          {/* <Typography>Welcome to AppsTest</Typography>
-          <Typography paragraph>
-            We are a platform of software testers. Take your time to learn about
-            the platform and our rules - you don&apos;t have to rush anything
-          </Typography> */}
-          <DashContent />
+          {/* <DashContent /> */}
+          {children}
         </div>
       </Box>
     </Box>
