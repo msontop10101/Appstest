@@ -1,67 +1,116 @@
-import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
+import React, { useState } from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
+import { Typography, Divider, TextField } from "@mui/material";
+import CustomButton from "../CustomButton/CustomButton";
+import AddIcon from "@mui/icons-material/Add";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import { tabs } from "../../files/data";
+import { DatePicker } from "antd";
+import "antd/dist/antd.css";
+import moment from "moment";
+import Styles from "./TestContent.module.css";
+const { RangePicker } = DatePicker;
 
 export default function Header() {
-  const [value, setValue] = React.useState(0);
+  const buttonStyles = {
+    fontSize: "1.2rem",
+    width: {
+      sm: 150,
+    },
+    marginTop: 2,
+    padding: 1,
+    "&:hover": {
+      backgroundColor: "#00690B",
+    },
+  };
+  const tabStyle = {
+    minHeight: "40px",
+    fontWeight: "bold",
+    padding: "0px",
+    marginRight: "24px",
+  };
+  const headTextStyle = {
+    fontSize: "22px",
+    fontWeight: "bold",
+    marginBottom: "10px",
+  };
+  const headRow = {
+    display: "flex",
+    justifyContent: "space-between",
+  };
+  const filterStyle = {
+    display: "flex",
+    marginTop: "45px",
+    justifyContent: "flex-end",
+  };
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const [value, setValue] = useState("one");
+  const [dates, setDates] = useState([]);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
-        </Tabs>
+    <Box sx={{ width: "100%" }}>
+      <Box sx={headRow}>
+        <Typography sx={headTextStyle}>Tests</Typography>
+        <CustomButton
+          color="primary"
+          size="small"
+          variant="contained"
+          sx={buttonStyles}
+          fullWidth={true}
+          type="submit"
+        >
+          <>
+            <AddIcon />
+            <Typography>
+              <Box sx={{ textTransform: "capitalize" }}>Add team</Box>
+            </Typography>
+          </>
+        </CustomButton>
       </Box>
-      <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        textColor="secondary"
+        indicatorColor="secondary"
+        aria-label="secondary tabs example"
+      >
+        <Tab value="one" label="All tests" sx={tabStyle} />
+        {tabs.map((tab, index) => {
+          return (
+            <Tab
+              key={index}
+              icon={<tab.img />}
+              iconPosition="start"
+              label={tab.name}
+              sx={tabStyle}
+            />
+          );
+        })}
+      </Tabs>
+      <Divider />
+      <Box sx={filterStyle}>
+        <RangePicker
+          onChange={(values: any) => {
+            setDates(
+              values?.map((item: string) => {
+                return moment(item).format("YYYY-DD-MM");
+              })
+            );
+          }}
+        />
+        <div className={Styles.inpFilterContainer}>
+          <input placeholder="Filter" />
+          <div className={Styles.filterIcon}>
+            <FilterAltIcon style={{fill: "gray"}}/>
+          </div>
+        </div>
+      </Box>
     </Box>
   );
 }

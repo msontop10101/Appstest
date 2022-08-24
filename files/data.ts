@@ -69,6 +69,11 @@ import android from "../Assets/Images/ModalStep1/android.png"
 import web from "../Assets/Images/ModalStep1/web.png"
 import api from "../Assets/Images/ModalStep1/api.png"
 
+//IMPORTTED ICONS FOR TEST TABS
+import AdbIcon from '@mui/icons-material/Adb';
+import AppleIcon from '@mui/icons-material/Apple';
+import LanguageIcon from '@mui/icons-material/Language';
+
 
 export const LPsection3 = [
     {
@@ -255,4 +260,20 @@ export const deviceVersions = [
     {version: 10.0},
     {version: 11.0},
     {version: 12.0},
+]
+
+//Tabs in test section 
+export const tabs = [
+    {
+        img : AdbIcon,
+        name: "Androiid"
+    },
+    {
+        img : AppleIcon,
+        name: "IOS"
+    },
+    {
+        img : LanguageIcon,
+        name: "Web"
+    },
 ]

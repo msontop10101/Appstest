@@ -21,15 +21,15 @@ import Styles from "./DashDrawer.module.css";
 import Image from "next/image";
 import { DImages, DashNavElements, appbarIcons } from "../../files/data";
 import DashContent from "../DashContent/DashContent";
-import Link from "next/link"
+import Link from "next/link";
 
 type Props = {
-  children: JSX.Element
-}
+  children: JSX.Element;
+};
 
 const drawerWidth = 240;
 
-const DashDrawer: React.FC<Props> = ({children}) => {
+const DashDrawer: React.FC<Props> = ({ children }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [miniOpen, setMiniOpen] = useState(false);
   const [fullOpen, setFullOpen] = useState(false);
@@ -111,9 +111,7 @@ const DashDrawer: React.FC<Props> = ({children}) => {
           return (
             <ListItem key={index}>
               <ListItemButton>
-                <Link href={link}>
-                <a>
-                <ListItemIcon sx={iconStyle}> 
+                <ListItemIcon sx={iconStyle}>
                   <Image src={icon} alt="icons" />
                 </ListItemIcon>
                 <div className={Styles.listText}>
@@ -122,8 +120,6 @@ const DashDrawer: React.FC<Props> = ({children}) => {
                 <div className={Styles.listTextDisplay}>
                   <ListItemText primary={name} />
                 </div>
-                </a>
-                </Link>
               </ListItemButton>
             </ListItem>
           );
