@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import {
   TableContainer,
   TableBody,
@@ -19,6 +19,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { useQuery } from "@tanstack/react-query";
 import { getTests } from "../Api/api";
 import TestPagination from "./TestPagination";
+import { selectedTabContext } from "./TestContent";
 
 export const TableComp = () => {
   const query = useQuery(["Tests"], getTests);
@@ -28,9 +29,23 @@ export const TableComp = () => {
   const [testsPerPage, setTestsPerPage] = useState(6);
   const lastTestId = page * testsPerPage;
   const firstTestId = lastTestId - testsPerPage;
-  const shownTests = tableData?.slice(firstTestId, lastTestId);
+  let shownTests = tableData?.slice(firstTestId, lastTestId);
   const testsLength = tableData?.length;
   const paginate = (pageNum: number) => setPage(pageNum);
+  const selectedTab = useContext(selectedTabContext);
+ const androidFilter = tableData.filter((data: any) => {
+    return data.type == "Android"
+ })
+ const iosFilter = tableData.filter((data: any) => {
+  return data.type == "IOS"
+})
+const webFilter = tableData.filter((data: any) => {
+  return data.type == "Web"
+})
+ selectedTab == "Android" ? shownTests = androidFilter?.slice(firstTestId, lastTestId) : null 
+ selectedTab == "IOS" ? shownTests = iosFilter?.slice(firstTestId, lastTestId) : null 
+ selectedTab == "Web" ? shownTests = webFilter?.slice(firstTestId, lastTestId) : null 
+ 
   const tableContainer = {
     marginTop: "45px",
   };

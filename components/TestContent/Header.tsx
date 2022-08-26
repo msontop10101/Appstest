@@ -14,7 +14,10 @@ import moment from "moment";
 import Styles from "./TestContent.module.css";
 const { RangePicker } = DatePicker;
 
-export default function Header() {
+
+
+export default function Header(props:any) {
+  
   const buttonStyles = {
     fontSize: "1.2rem",
     width: "150px",
@@ -71,6 +74,8 @@ export default function Header() {
 
   const [value, setValue] = useState("one");
   const [dates, setDates] = useState([]);
+  props.getValue(value)
+  
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
@@ -142,6 +147,7 @@ export default function Header() {
                 iconPosition="start"
                 label={tab.name}
                 sx={tabStyle}
+                value={tab.name}
               />
             );
           })}

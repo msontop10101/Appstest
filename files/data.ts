@@ -266,7 +266,7 @@ export const deviceVersions = [
 export const tabs = [
     {
         img : AdbIcon,
-        name: "Androiid"
+        name: "Android"
     },
     {
         img : AppleIcon,
