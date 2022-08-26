@@ -26,11 +26,11 @@ export const TableComp = () => {
   const [tests, setTests] = useState(tableData);
   const [page, setPage] = useState(1);
   const [testsPerPage, setTestsPerPage] = useState(6);
-  const lastTestId = page * testsPerPage
-  const firstTestId = lastTestId -testsPerPage
-  const shownTests = tableData?.slice(firstTestId, lastTestId)
-  const testsLength = tableData?.length
-  const paginate = (pageNum:number) => setPage(pageNum)
+  const lastTestId = page * testsPerPage;
+  const firstTestId = lastTestId - testsPerPage;
+  const shownTests = tableData?.slice(firstTestId, lastTestId);
+  const testsLength = tableData?.length;
+  const paginate = (pageNum: number) => setPage(pageNum);
   const tableContainer = {
     marginTop: "45px",
   };
@@ -101,17 +101,7 @@ export const TableComp = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {shownTests?.map((data, index) => {
-              const {
-                name,
-                desc,
-                type,
-                enviroment,
-                starttime,
-                notification,
-                status,
-                action,
-              } = data;
+            {shownTests?.map((data: any, index: number) => {
               return (
                 <TableRow
                   key={index}
@@ -119,50 +109,50 @@ export const TableComp = () => {
                 >
                   <TableCell>
                     <Box>
-                      <Typography>{name}</Typography>
-                      <Typography sx={infoStyle}>{desc}</Typography>
+                      <Typography>{data.name}</Typography>
+                      <Typography sx={infoStyle}>{data.desc}</Typography>
                     </Box>
                   </TableCell>
                   <TableCell>
-                    {type == "Android" ? (
+                    {data.type == "Android" ? (
                       <AdbIcon />
-                    ) : type == "IOS" ? (
+                    ) : data.type == "IOS" ? (
                       <AppleIcon />
-                    ) : type == "Web" ? (
+                    ) : data.type == "Web" ? (
                       <LanguageIcon />
                     ) : (
-                      type
+                      data.type
                     )}
                   </TableCell>
-                  <TableCell>{enviroment}</TableCell>
-                  <TableCell>{starttime}</TableCell>
-                  <TableCell>{notification}</TableCell>
+                  <TableCell>{data.enviroment}</TableCell>
+                  <TableCell>{data.starttime}</TableCell>
+                  <TableCell>{data.notification}</TableCell>
                   <TableCell>
-                    {status == "Pending" ? (
+                    {data.status == "Pending" ? (
                       <Box sx={cellBoxStyle}>
                         <FiberManualRecordIcon style={{ fill: "#EC8A00" }} />
                         <Typography sx={{ color: "#EC8A00" }}>
                           Pending
                         </Typography>
                       </Box>
-                    ) : status == "Inprogress" ? (
+                    ) : data.status == "Inprogress" ? (
                       <Box sx={cellBoxStyle}>
                         <FiberManualRecordIcon style={{ fill: "#0067DC" }} />
                         <Typography sx={{ color: "#0067DC" }}>
                           In Progress
                         </Typography>
                       </Box>
-                    ) : status == "Completed" ? (
+                    ) : data.status == "Completed" ? (
                       <Box sx={cellBoxStyle}>
                         <FiberManualRecordIcon color="primary" />
                         <Typography color="primary">Completed</Typography>
                       </Box>
                     ) : (
-                      status
+                      data.status
                     )}
                   </TableCell>
                   <TableCell>
-                    {action.toLowerCase() == "visible" && (
+                    {data.action.toLowerCase() == "visible" && (
                       <Box sx={visibleStyle}>
                         <VisibilityIcon
                           style={{ fill: "rgba(17, 42, 99, 0.8)" }}
@@ -176,7 +166,12 @@ export const TableComp = () => {
           </TableBody>
         </Table>
       </TableContainer>
-      <TestPagination testsPerPage={testsPerPage} totalTestsOnPage={testsLength} paginate={paginate} page={page}/>
+      <TestPagination
+        testsPerPage={testsPerPage}
+        totalTestsOnPage={testsLength}
+        paginate={paginate}
+        page={page}
+      />
     </>
   );
 };

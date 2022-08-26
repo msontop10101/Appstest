@@ -11,6 +11,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 const MobileTestList = () => {
   const query = useQuery(["Tests"], getTests);
   const tableData = query.data;
+
   const cardStyle = {
     margin: "20px 0px 20px 0px",
     maxWidth: 345,
@@ -28,64 +29,80 @@ const MobileTestList = () => {
   };
   const rightSide = {
     textAlign: "left",
-    width: "35%"
-  }
+    width: "35%",
+  };
   const typeStyle = {
     marginRight: "10px",
   };
   const descStyle = {
     fontSize: "14px",
-    color: "gray"
-  }
+    color: "gray",
+  };
   return (
     <>
       <Box>
-        {tableData?.map((data, index) => {
-          const { type, name, desc, enviroment, status } = data;
+        {tableData?.map((data: any, index: number) => {
           return (
             <Card sx={cardStyle} key={index}>
               <CardContent sx={contentStyle}>
                 <Box sx={leftSide}>
                   <Box sx={typeStyle}>
-                    {type == "Android" ? (
+                    {data.type == "Android" ? (
                       <AdbIcon />
-                    ) : type == "IOS" ? (
+                    ) : data.type == "IOS" ? (
                       <AppleIcon />
-                    ) : type == "Web" ? (
+                    ) : data.type == "Web" ? (
                       <LanguageIcon />
                     ) : (
-                      type
+                      data.type
                     )}
                   </Box>
                   <Box>
-                    <Typography>{name}</Typography>
-                    <Typography sx={descStyle}>{desc}</Typography>
+                    <Typography>{data.name}</Typography>
+                    <Typography sx={descStyle}>{data.desc}</Typography>
                   </Box>
                 </Box>
                 <Box sx={rightSide}>
-                  <Typography>{enviroment}</Typography>
-                    {status == "Pending" ? (
-                      <Box sx={cellBoxStyle}>
-                        <FiberManualRecordIcon style={{ fill: "#EC8A00" }} />
-                        <Typography sx={{ color: "#EC8A00", fontSize: "14px", textAlign: "left"}}>
-                          Pending
-                        </Typography>
-                      </Box>
-                    ) : status == "Inprogress" ? (
-                      <Box sx={cellBoxStyle}>
-                        <FiberManualRecordIcon style={{ fill: "#0067DC" }} />
-                        <Typography sx={{ color: "#0067DC", fontSize: "14px", textAlign: "left"}}>
-                          In Progress
-                        </Typography>
-                      </Box>
-                    ) : status == "Completed" ? (
-                      <Box sx={cellBoxStyle}>
-                        <FiberManualRecordIcon color="primary" />
-                        <Typography color="primary" sx={{fontSize: "14px", textAlign: "left"}}>Completed</Typography>
-                      </Box>
-                    ) : (
-                      status
-                    )}
+                  <Typography>{data.enviroment}</Typography>
+                  {data.status == "Pending" ? (
+                    <Box sx={cellBoxStyle}>
+                      <FiberManualRecordIcon style={{ fill: "#EC8A00" }} />
+                      <Typography
+                        sx={{
+                          color: "#EC8A00",
+                          fontSize: "14px",
+                          textAlign: "left",
+                        }}
+                      >
+                        Pending
+                      </Typography>
+                    </Box>
+                  ) : data.status == "Inprogress" ? (
+                    <Box sx={cellBoxStyle}>
+                      <FiberManualRecordIcon style={{ fill: "#0067DC" }} />
+                      <Typography
+                        sx={{
+                          color: "#0067DC",
+                          fontSize: "14px",
+                          textAlign: "left",
+                        }}
+                      >
+                        In Progress
+                      </Typography>
+                    </Box>
+                  ) : data.status == "Completed" ? (
+                    <Box sx={cellBoxStyle}>
+                      <FiberManualRecordIcon color="primary" />
+                      <Typography
+                        color="primary"
+                        sx={{ fontSize: "14px", textAlign: "left" }}
+                      >
+                        Completed
+                      </Typography>
+                    </Box>
+                  ) : (
+                    data.status
+                  )}
                 </Box>
               </CardContent>
             </Card>
