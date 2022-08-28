@@ -277,3 +277,126 @@ export const tabs = [
         name: "Web"
     },
 ]
+
+export const availableTests = [
+    {
+        name: "Providus Bank",
+        browser: ["chrome", "ie", "firefox"],
+        totalbugs: 15,
+        submitted: 2,
+        type: "web"
+    },
+    {
+        type: "android",
+        name: "Aella app",
+        version: 5.0,
+        totalbugs: 15,
+        submitted: 0
+    },
+    {
+        type: "ios",
+        name: "Betamoney",
+        version: 10,
+        totalbugs: 15,
+        submitted: 2
+    },
+    {
+        type: "api",
+        name: "inlaks",
+        version: 1,
+        totalbugs: 15,
+        submitted: 2
+    },
+    {
+        name: "Providus Bank",
+        browser: ["chrome", "ie", "firefox"],
+        totalbugs: 15,
+        submitted: 2,
+        type: "web"
+    },
+    {
+        type: "android",
+        name: "Aella app",
+        version: 5.0,
+        totalbugs: 15,
+        submitted: 0
+    },
+    {
+        type: "ios",
+        name: "Betamoney",
+        version: 10,
+        totalbugs: 15,
+        submitted: 2
+    },
+    {
+        type: "api",
+        name: "inlaks",
+        version: 1,
+        totalbugs: 15,
+        submitted: 2
+    }
+]
+export const conditions = [
+    {
+        cau: "No Order, No Booking",
+        warn: "red",
+    },
+    {
+        cau: "Do not contact customer support",
+        warn: "pink",
+    },
+    {
+        cau: "Do not leave product reviews or comments",
+        warn: "orange",
+    },
+    {
+        cau: "Submit report in English",
+        warn: "blue",
+    }
+]
+export const credentials = [
+    {
+        url: "https//release.betamoney.dev/manualregressiontesting/login",
+        username: "qatest.betamoney.com",
+        password: "kflsjflkjKJlkHKFHKH",
+        futher: "Additonal power user added password: Betamoney1234!"
+    }
+]
+export const testFeatures = [
+    {
+        title: "Auth: Create Account Modal",
+        location: "\"My acccount\" button global site header",
+        whatToTest: "This feature allows user to quickly create a new account from any page",
+        expected: "Upon clicking the \"My account \" button, as an unauthenticated user a model should appear where you can select the \"create account\" option. After completing the requied fields and submitting the for, the modal should close and \"My account\" menu should be updated to resflect the customer name"
+    },
+    {
+        title: "Auth: Create Account Page",
+        location: "\"My acccount\" button global site header",
+        whatToTest: "This feature allows user to quickly create a new account from any page",
+        expected: "Upon clicking the \"My account \" button, as an unauthenticated user a model should appear where you can select the \"create account\" option. After completing the requied fields and submitting the for, the modal should close and \"My account\" menu should be updated to resflect the customer name"
+    },
+    {
+        title: "Auth: Sign-in modal",
+        location: "\"My acccount\" button global site header",
+        whatToTest: "This feature allows user to quickly create a new account from any page",
+        expected: "Upon clicking the \"My account \" button, as an unauthenticated user a model should appear where you can select the \"create account\" option. After completing the requied fields and submitting the for, the modal should close and \"My account\" menu should be updated to resflect the customer name"
+    },
+    {
+        title: "Category Listing Page",
+        location: "\"My acccount\" button global site header",
+        whatToTest: "This feature allows user to quickly create a new account from any page",
+        expected: "Upon clicking the \"My account \" button, as an unauthenticated user a model should appear where you can select the \"create account\" option. After completing the requied fields and submitting the for, the modal should close and \"My account\" menu should be updated to resflect the customer name"
+    },
+    {
+        title: "Footer",
+        location: "\"My acccount\" button global site header",
+        whatToTest: "This feature allows user to quickly create a new account from any page",
+        expected: "Upon clicking the \"My account \" button, as an unauthenticated user a model should appear where you can select the \"create account\" option. After completing the requied fields and submitting the for, the modal should close and \"My account\" menu should be updated to resflect the customer name"
+    },
+    {
+        title: "Header: Account Menu",
+        location: "\"My acccount\" button global site header",
+        whatToTest: "This feature allows user to quickly create a new account from any page",
+        expected: "Upon clicking the \"My account \" button, as an unauthenticated user a model should appear where you can select the \"create account\" option. After completing the requied fields and submitting the for, the modal should close and \"My account\" menu should be updated to resflect the customer name"
+    }
+]

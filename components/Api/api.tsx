@@ -5,3 +5,4 @@ const api = axios.create({
 })
 
 export const getTests = () => api.get("/test").then(res=> res.data)
+export const getBugLists = () => api.get("/bugList").then(res => res.data)
