@@ -400,3 +400,58 @@ export const testFeatures = [
         expected: "Upon clicking the \"My account \" button, as an unauthenticated user a model should appear where you can select the \"create account\" option. After completing the requied fields and submitting the for, the modal should close and \"My account\" menu should be updated to resflect the customer name"
     }
 ]
+export const communication = [
+    {
+        name: "Wizzy T",
+        msg: "Hi there, how are you my name is peter, i am yet to see the update from your ends",
+        time: "3 days ago"
+    },
+    {
+        name: "Thomas",
+        msg: "Hi there, how are you my name is Thomas, i am yet to see the update from your ends",
+        time: "3 days ago"
+    },
+    {
+        name: "Jeffery JORJOR T",
+        msg: "Hi it's jeffery, update this thing na",
+        time: "3 days ago"
+    },
+    {
+        name: "Kelly",
+        msg: "Hi there, how are you my name is peter, i am yet to see the update from your ends",
+        time: "1 day ago"
+    },
+    {
+        name: "Thomas",
+        msg: "Waiting as well",
+        time: "1 min ago"
+    },
+    {
+        name: "Jeffery JORJOR T",
+        msg: "Don't mind this TL, he dey dull",
+        time: "30sec ago"
+    },
+]
+export const bugTypes = [
+    {
+        type: "Functional"
+    },
+    {
+        type: "Usability"
+    }
+]
+
+export const severity = [
+    {
+        name: "Low"
+    },
+    {
+        name: "Medium"
+    },
+    {
+        name: "High"
+    },
+    {
+        name: "Critical"
+    },
+]

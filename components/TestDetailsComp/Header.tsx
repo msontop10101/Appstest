@@ -19,7 +19,7 @@ const Header = (props: any) => {
   }
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%'}}>
       <Box>
         <Typography sx={header}>Providus Bank</Typography>
       </Box>

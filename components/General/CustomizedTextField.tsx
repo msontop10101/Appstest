@@ -1,39 +1,26 @@
+import * as React from 'react';
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import InputBase from "@mui/material/InputBase";
-import Box from "@mui/material/Box";
-import FormControl from "@mui/material/FormControl";
-
-const BootstrapInput = styled(InputBase)(({ theme }) => ({
-  "label + &": {
-    marginTop: theme.spacing(3),
-  },
-  "& .MuiInputBase-input": {
-    borderRadius: 4,
-    position: "relative",
-    backgroundColor: theme.palette.mode === "light" ? "#fcfcfb" : "#2b2b2b",
-    border: "1px solid #ced4da",
-    fontSize: 16,
-    width: "auto",
-    padding: "10px 12px",
-    transition: theme.transitions.create(["border-color", "background-color"]),
-
-    "&:focus": {
-      borderColor: theme.palette.primary.main,
-    },
-  },
-}));
-
-const CustomizedTextField = () => {
+export default function CustomizedTextField() {
   return (
-    <Box component="form" noValidate>
-      <FormControl variant="standard">
-        <BootstrapInput id="bootstrap-input" />
-      </FormControl>
-    </Box>
+    <Paper
+      component="form"
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', backgroundColor: "green" }}
+    >
+      <InputBase
+        sx={{ ml: 1, flex: 1}}
+        placeholder="All"
+        inputProps={{ 'aria-label': 'search google maps' }}
+      />
+      <Divider sx={{ height: 30, borderBottomWidth: "43px" }} style={{background: "white"}} orientation="vertical" />
+      <IconButton color="primary" sx={{ p: '10px' }} aria-label="directions">
+        <ExpandMoreIcon style ={{color: "white"}}/>
+      </IconButton>
+    </Paper>
   );
-};
-
-export default CustomizedTextField;
+}

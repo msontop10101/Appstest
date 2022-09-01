@@ -2,9 +2,11 @@ import React from "react";
 import Styles from "./BugList.module.css";
 import { useQuery } from "@tanstack/react-query";
 import { getBugLists } from "../Api/api";
-import { Typography } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import PestControlOutlinedIcon from "@mui/icons-material/PestControlOutlined";
-import Header from "./Header"
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+
+import Header from "./Header";
 
 const BugList = () => {
   const query = useQuery(["bugs"], getBugLists);
@@ -17,6 +19,15 @@ const BugList = () => {
       case "high":
         return "#ff00005c";
         break;
+      case "approved":
+        return "#00800059";
+        break;
+      case "declined":
+        return "#ff00005c";
+        break;
+      case "inReview":
+        return "#0000ff59";
+        break;
       default:
         return "#0000ff59";
         break;
@@ -27,6 +38,15 @@ const BugList = () => {
       case "critical":
         return "red";
         break;
+      case "approved":
+        return "green";
+        break;
+      case "declined":
+        return "red";
+        break;
+      case "inReview":
+        return "blue";
+        break;
       case "high":
         return "red";
         break;
@@ -35,9 +55,25 @@ const BugList = () => {
         break;
     }
   };
+  const servColorSwitch = (sev:string) => {
+    switch(sev) {
+      case "critical":
+        return "red";
+        break;
+      case "high":
+        return "orange";
+        break;
+      case "medium":
+        return "yellow";
+        break;
+      case "low":
+        return "blue";
+        break;
+    }
+  }
   return (
     <>
-    <Header/>
+      <Header />
       <table className={Styles.tableStyle}>
         <tr>
           <th>
@@ -67,11 +103,35 @@ const BugList = () => {
               <td style={{ width: "30%" }}>{title}</td>
               <td>
                 {status == "approved" ? (
-                  <Typography>Approved</Typography>
+                  <Typography
+                    style={{
+                      color: colorSwitch(status),
+                      backgroundColor: bgColorSwitch(status),
+                    }}
+                    className={Styles.listedIcons}
+                  >
+                    Approved
+                  </Typography>
                 ) : status == "declined" ? (
-                  <Typography>Declined</Typography>
+                  <Typography
+                    style={{
+                      color: colorSwitch(status),
+                      backgroundColor: bgColorSwitch(status),
+                    }}
+                    className={Styles.listedIcons}
+                  >
+                    Declined
+                  </Typography>
                 ) : status == "inReview" ? (
-                  <Typography>In review</Typography>
+                  <Typography
+                    style={{
+                      color: colorSwitch(status),
+                      backgroundColor: bgColorSwitch(status),
+                    }}
+                    className={Styles.listedIcons}
+                  >
+                    In review
+                  </Typography>
                 ) : status == "pending" ? (
                   <Typography>Pending</Typography>
                 ) : (
@@ -82,13 +142,25 @@ const BugList = () => {
               <td>{test}</td>
               <td>
                 {severity == "critical" ? (
+                  <Box className={Styles.serv}>
+                    <RadioButtonCheckedIcon style={{color: servColorSwitch(severity), marginRight: "5px"}}/>
                   <Typography>Critical</Typography>
+                  </Box>
                 ) : severity == "high" ? (
+                  <Box className={Styles.serv}>
+                    <RadioButtonCheckedIcon style={{color: servColorSwitch(severity), marginRight: "5px"}}/>
                   <Typography>High</Typography>
+                  </Box>
                 ) : severity == "medium" ? (
+                  <Box className={Styles.serv}>
+                    <RadioButtonCheckedIcon style={{color: servColorSwitch(severity), marginRight: "5px"}}/>
                   <Typography>Medium</Typography>
+                  </Box>
                 ) : severity == "low" ? (
+                  <Box className={Styles.serv}>
+                    <RadioButtonCheckedIcon style={{color: servColorSwitch(severity), marginRight: "5px"}}/>
                   <Typography>Low</Typography>
+                  </Box>
                 ) : null}
               </td>
             </tr>

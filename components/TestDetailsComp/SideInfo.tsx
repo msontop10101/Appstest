@@ -1,8 +1,8 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
-import LanguageIcon from "@mui/icons-material/Language";
 
-const SideInfo = () => {
+
+const SideInfo = (props:any) => {
   const result = {
     fontWeight: "bold",
     backgroundColor: "#0080004a",
@@ -23,29 +23,20 @@ const SideInfo = () => {
     <>
       <Box>
         <Box>
-          <LanguageIcon
-            style={{
-              color: "white",
-              minWidth: "50px",
-              height: "50px",
-              padding: "7px",
-              backgroundColor: "black",
-              borderBottomRightRadius: "10px",
-            }}
-          />
+          {props.heading}
         </Box>
         <Box sx={secContainer}>
           <Box sx={section}>
-            <Typography>Total Bugs</Typography>
-            <Typography sx={result}>15</Typography>
+            <Typography>{props.titleOne}</Typography>
+            <Typography sx={result}>{props.one}</Typography>
           </Box>
           <Box sx={section}>
-            <Typography>My submitted bug</Typography>
-            <Typography sx={result}>2</Typography>
+            <Typography>{props.titleTwo}</Typography>
+            <Typography sx={result}>{props.two}</Typography>
           </Box>
           <Box sx={section}>
-            <Typography>Browser Type</Typography>
-            <Typography>......</Typography>
+            <Typography>{props.titleThree}</Typography>
+            <Typography>{props.three}</Typography>
           </Box>
         </Box>
       </Box>

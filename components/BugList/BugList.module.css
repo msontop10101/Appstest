@@ -25,12 +25,33 @@
     padding: 5px;
 }
 .listedIcons {
-    width: 40px;
+    min-width: 40px;
     height: 40px;
     border-radius: 5px;
     padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.serv {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.inputContainer {
+    position: relative;
 }
 .inputStyle {
     padding: 5px;
     height: 50px;
+    width: 30%;
+}
+.searchIconStyle {
+    position: absolute;
+    right: 59%;
+    bottom: 28%
 }

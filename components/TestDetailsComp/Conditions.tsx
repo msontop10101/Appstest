@@ -2,6 +2,7 @@ import React from "react";
 import { conditions } from "../../files/data";
 import { Typography, Box, Grid } from "@mui/material";
 import WarningAmberRoundedIcon from "@mui/icons-material/WarningAmberRounded";
+import LanguageIcon from "@mui/icons-material/Language";
 import SideInfo from "./SideInfo";
 
 const bgColorSwitch = (warning: string) => {
@@ -50,8 +51,8 @@ const Conditions = () => {
   const rightSide = {
     width: "40%",
     display: "flex",
-    justifyContent: "center"
-  }
+    justifyContent: "center",
+  };
 
   return (
     <>
@@ -87,7 +88,24 @@ const Conditions = () => {
           </Box>
         </Box>
         <Box sx={rightSide}>
-          <SideInfo />
+          <SideInfo
+            heading={<LanguageIcon
+              style={{
+                color: "white",
+                minWidth: "50px",
+                height: "50px",
+                padding: "7px",
+                backgroundColor: "black",
+                borderBottomRightRadius: "15px",
+              }}
+            />}
+            titleOne={"Total Bugs"}
+            titleTwo={"My submitted bug"}
+            titleThree={"Browser Type"}
+            one={15}
+            two={2}
+            three={"..."}
+          />
         </Box>
       </Box>
     </>
