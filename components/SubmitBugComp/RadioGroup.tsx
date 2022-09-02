@@ -10,13 +10,7 @@ import {
 } from "@mui/material";
 
 const SubmitBugPage = () => {
-  const header = {
-    fontSize: "20px",
-    fontWeight: "bold",
-  };
-  const subHeader = {
-    margin: "10px 0px 5px 0px",
-  };
+
   const blueColor = {
     color: "blue",
     "&.Mui-checked": {
@@ -31,17 +25,22 @@ const SubmitBugPage = () => {
   };
   const orangeColor = {
     color: "orange",
-    "& .Mui-checked": {
+    "&.Mui-checked": {
       color: "orange",
     },
   };
   const redColor = {
     color: "red",
-    "& .Mui-checked": {
+    "&.Mui-checked": {
       color: "red",
     },
   };
- 
+ const radioStyle = {
+  border: "1px solid gray",
+  borderRadius: "5px",
+  paddingRight: "20px",
+  marginLeft: "2px",
+ }
   return (
     <>
       <Box>
@@ -52,6 +51,7 @@ const SubmitBugPage = () => {
                 return (
                   <React.Fragment key={index}>
                     <FormControlLabel
+                    sx={radioStyle}
                       value={sev.name}
                       control={
                         <Radio

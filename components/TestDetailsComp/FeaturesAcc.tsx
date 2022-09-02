@@ -7,8 +7,6 @@ const FeaturesAcc = () => {
   const [isOpen, setIsOpen] = useState(false);
   const getIsOpen = (val: any) => {
     setIsOpen(val)
-    console.log("this is isOpen -> ", isOpen)
-    console.log("this is gotten value -> ", val)
   }
 
   const submitBtnOnOpen = {

@@ -21,7 +21,7 @@ function Header() {
     <div>
       <AppBar
         style={{ background: "inherit" }}
-        sx={{ backdropFilter: "blur(20px)" }}
+        sx={{ backdropFilter: "blur(10px)" }}
         className={styles.place}
       >
         <Toolbar className={styles.spread}>

@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
+
 export const appThemes = createTheme({
   palette: {
     primary: {
@@ -8,6 +9,9 @@ export const appThemes = createTheme({
     secondary: {
       main: "#03510a",
     },
+  },
+  typography: {
+    fontFamily: "DM Sans",
   },
   components: {
     // Name of the component

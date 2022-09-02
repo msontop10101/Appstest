@@ -6,7 +6,7 @@ type Props = {
   children: JSX.Element;
 };
 
-const CustomOptionsDropDown: React.FC<Props> = ({ children }) => {
+const CustomOptionsDropDown: React.FC<Props> = ({ children}) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(!open);

@@ -35,7 +35,7 @@ const TestDetailsComp = () => {
           ) : page == "communication" ? (
             <Communication />
           ) : (
-            <Typography>Page not found!</Typography>
+            <Typography></Typography>
           )}
         </Box>
       </DashDrawer>

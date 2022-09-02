@@ -455,3 +455,31 @@ export const severity = [
         name: "Critical"
     },
 ]
+
+export const teamData = [
+    {
+        name: "Moyosore Elijah",
+        role: "Frontend Engineer",
+        status: "admin"
+    },
+    {
+        name: "Moyosore Elijah",
+        role: "Frontend Engineer",
+        status: "admin"
+    },
+    {
+        name: "Moyosore Elijah",
+        role: "Frontend Engineer",
+        status: "admin"
+    },
+    {
+        name: "Moyosore Elijah",
+        role: "Frontend Engineer",
+        status: "admin"
+    },
+    {
+        name: "Moyosore Elijah",
+        role: "Frontend Engineer",
+        status: "admin"
+    }
+]
