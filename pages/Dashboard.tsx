@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardComp from "../components/DashboardComp/DashboardComp";
+import DashboardComp from "../components/Dashboard/DashboardContainer/Dashboard";
 
 function Dashboard() {
   return (

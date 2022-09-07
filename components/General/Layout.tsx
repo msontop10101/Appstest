@@ -1,14 +1,17 @@
 import React from "react";
-import styles from "./Layout.module.css";
+import {Box} from "@mui/material"
 
 type Props = {
   children: React.ReactNode;
 };
 
-function Layout({ children }: Props) {
+const Layout = ({ children }: Props) => {
+  const layoutSection = {
+    padding: "30px",
+}
   return (
     <>
-      <div className={styles.layoutSection}>{children}</div>
+      <Box sx={layoutSection} >{children}</Box>
     </>
   );
 }

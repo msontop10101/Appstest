@@ -1,8 +1,11 @@
 import React from 'react'
+import ReportComp from '../components/Reports/Report'
 
 const Report = () => {
   return (
-    <div>Report</div>
+    <>
+      <ReportComp/>
+    </>
   )
 }
 

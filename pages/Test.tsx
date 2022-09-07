@@ -1,10 +1,15 @@
 import React from 'react'
-import TestComp from "../components/TestComp/TestComp"
+import DashDrawer from '../components/Dashboard/DashboardDrawer/DashboardDrawer'
+import TestContent from '../components/Tests/TestContent/TestContent'
 
-const Test = () => {
+const TestComp = () => {
   return (
-    <TestComp/>
+    <div>
+        <DashDrawer>
+            <TestContent/>
+        </DashDrawer>
+    </div>
   )
 }
 
-export default Test
+export default TestComp

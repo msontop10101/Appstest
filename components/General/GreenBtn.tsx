@@ -7,8 +7,14 @@ type Props = {
 };
 
 function GreenBtn({ children }: Props) {
+  const text = {
+    fontWeight: "500",
+    fontFamily: "DM sans",
+    padding: "5px 10px 5px 10px",
+    textTransform: "capitalize",
+}
   const btnStyle = {
-    backgroundColor: "#00690B",
+    backgroundColor: "#00690B", 
     color: "white",
     border: 1,
     borderColor: "#00690B",
@@ -21,7 +27,7 @@ function GreenBtn({ children }: Props) {
   return (
     <div>
       <Button sx={btnStyle}>
-        <Typography className={styles.text}>{children}</Typography>
+        <Typography sx={text}>{children}</Typography>
       </Button>
     </div>
   );

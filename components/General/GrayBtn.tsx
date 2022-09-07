@@ -1,12 +1,18 @@
 import React from "react";
 import { Button, Typography } from "@mui/material";
-import styles from "./GrayBtn.module.css";
 
 type Props = {
   children: React.ReactNode;
 };
 
-function GrayBtn({ children }: Props) {
+const GrayBtn = ({ children }: Props) => { 
+  const text = {
+    fontWeight: "500",
+    fontFamily: "DM sans",
+    padding: "5px 10px 5px 10px",
+    textTransform: "capitalize",
+}
+
   const btnStyles = {
     backgroundColor: "#EEEEEE",
     border: 1,
@@ -20,7 +26,7 @@ function GrayBtn({ children }: Props) {
   return (
     <div>
       <Button sx={btnStyles}>
-        <Typography className={styles.text}>{children}</Typography>
+        <Typography sx={text}>{children}</Typography>
       </Button>
     </div>
   );

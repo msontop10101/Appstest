@@ -1,5 +1,5 @@
 import React from 'react'
-import AvTestsComp from '../components/AvailableTests/AvTestsComp'
+import AvTestsComp from '../components/TestersDashboard/AvailableTests/AvailableTests'
 
 const AvailableTest = () => {
   return (

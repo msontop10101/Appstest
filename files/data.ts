@@ -157,7 +157,7 @@ export const DashNavElements = [
     {
         icon: icon1,
         name: "Dashboard",
-        link: "#"
+        link: "../../Dashboard"
     },
     {
         icon: icon2,
@@ -167,12 +167,12 @@ export const DashNavElements = [
     {
         icon: icon3,
         name: "Teams",
-        link: "#"
+        link: "../../Teams"
     },
     {
         icon: icon4,
         name: "Report",
-        link: "#"
+        link: "../../Report"
     },
 ]
 
@@ -476,10 +476,36 @@ export const teamData = [
         name: "Moyosore Elijah",
         role: "Frontend Engineer",
         status: "admin"
+    }
+]
+
+export const testReport = [
+    {
+        name: "Login Positive",
+        desc: "Go to test",
+        type: "web",
+        duration: "00:00:02:322",
+        status: "Failed"
     },
     {
-        name: "Moyosore Elijah",
-        role: "Frontend Engineer",
-        status: "admin"
+        name: "Login Positive",
+        desc: "Go to test",
+        type: "web",
+        duration: "00:00:02:322",
+        status: "Passed"
+    },
+    {
+        name: "Login Positive",
+        desc: "Go to test",
+        type: "web",
+        duration: "00:00:02:322",
+        status: "Failed"
+    },
+    {
+        name: "Login Positive",
+        desc: "Go to test",
+        type: "web",
+        duration: "00:00:02:322",
+        status: "Passed"
     }
 ]

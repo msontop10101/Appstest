@@ -1,5 +1,5 @@
 import React from "react";
-import OrganisationProfileSetupComp from "../components/OrganisationProfileSetup/OrganisationProfileSetupComp";
+import OrganisationProfileSetupComp from "../components/ProfileSetup/OrganisationProfileSetup/OrganisationProfileSetup/OrganisationProfileSetup";
 
 function OrganisationProfileSetup() {
   return (

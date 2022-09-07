@@ -1,5 +1,6 @@
 import React from "react";
-import ProfileSetupComp from "../components/ProfileSetup/ProfileSetupComp";
+import ProfileSetupComp from "../components/ProfileSetup/ProfileSetup/ProfileSetup";
+
 
 function ProfileSetup() {
   return (

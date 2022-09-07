@@ -1,5 +1,5 @@
 import React from 'react'
-import BugOverviewComp from '../components/BugOverviewComp/BugOverviewComp'
+import BugOverviewComp from '../components/TestersDashboard/BugOverview/BugOverview'
 
 const BugOverview = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import ConfirmEmailComp from "../components/ConfirmEmail/ConfirmEmailComp";
+import ConfirmEmailComp from "../components/LoginScreens/ConfirmEmail/ConfirmEmail";
 
 function ConfirmEmail() {
   return (

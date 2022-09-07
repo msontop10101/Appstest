@@ -1,5 +1,5 @@
 import React from 'react'
-import SubmitBugComp from '../components/SubmitBugComp/SubmitBugComp'
+import SubmitBugComp from '../components/TestersDashboard/SubmitBug/SubmitBug'
 
 const SubmitBug = () => {
   return (
